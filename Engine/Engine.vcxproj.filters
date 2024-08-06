@@ -1,42 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="99. Headers">
+      <UniqueIdentifier>{ae5346ed-7a9d-4d16-963e-84feb79be5d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{d435c9d3-4bc1-472d-8c30-fa7a98ac9ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{82b16f42-c26b-4301-aeee-7f1472494dc4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameApp.h">
-      <Filter>소스 파일</Filter>
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="GameApp.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="WorldManager.h" />
+    <ClInclude Include="pch.h">
+      <Filter>99. Headers</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>소스 파일</Filter>
+      <Filter>99. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="D2DRenderer.h">
-      <Filter>소스 파일</Filter>
+      <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h" />
+    <ClInclude Include="AABB.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Engine.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="GameApp.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="WorldManager.cpp" />
     <ClCompile Include="pch.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>99. Headers</Filter>
     </ClCompile>
-    <ClCompile Include="GameApp.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="D2DRenderer.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="AABB.cpp">
+      <Filter>Collider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

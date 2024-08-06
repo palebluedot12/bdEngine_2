@@ -15,7 +15,8 @@
 #include "Resource.h"
 #include <dxgi1_4.h>
 #include <cmath>
-
+#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -57,40 +58,6 @@ public:
 			return Vector2D{ x, y };
 		return Vector2D({ x / length, y / length });
 	}
-};
-
-class AABB
-{
-public:
-	bool IsIntersect(AABB other)
-	{
-		// self min,max
-		float BoxA_xmin = center.x - size.x / 2;
-		float BoxA_xmax = center.x + size.x / 2;
-		float BoxA_ymin = center.y - size.y / 2;
-		float BoxA_ymax = center.y + size.y / 2;
-
-		// other min,max
-		float BoxB_xmin = other.center.x - other.size.x / 2;
-		float BoxB_xmax = other.center.x + other.size.x / 2;
-		float BoxB_ymin = other.center.y - other.size.y / 2;
-		float BoxB_ymax = other.center.y + other.size.y / 2;
-
-		// Check for no overlap conditions
-		if (BoxA_xmax < BoxB_xmin ||  // 오른쪽에 있으면 겹칠수가 없음
-			BoxA_xmin > BoxB_xmax ||  // 왼쪽에 있으면 겹칠수가 없음
-			BoxA_ymax < BoxB_ymin ||  // 아래에 있으면 겹칠수가 없음
-			BoxA_ymin > BoxB_ymax)	  // 위에 있으면 겹칠수가 없음
-		{
-			return false;
-		}
-
-		return true;
-	}
-
-public:
-	Vector2D center = { 0,0 };
-	Vector2D size = { 0,0 };
 };
 
 enum class Color
