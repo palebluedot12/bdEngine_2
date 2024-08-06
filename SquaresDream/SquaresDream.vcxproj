@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{98599177-960e-48ac-9ba2-24ad8bd07858}</ProjectGuid>
-    <RootNamespace>Client</RootNamespace>
+    <ProjectGuid>{5386eb85-5786-4e1d-8876-9cd4e35108fc}</ProjectGuid>
+    <RootNamespace>SquaresDream</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -131,20 +131,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Client.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SquaresDream.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SquaresDream.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Client.rc" />
+    <ResourceCompile Include="SquaresDream.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Client.ico" />
     <Image Include="small.ico" />
+    <Image Include="SquaresDream.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
