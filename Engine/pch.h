@@ -17,6 +17,7 @@
 #include <cmath>
 #include <list>
 #include <vector>
+#include "CommonEnums.h"
 
 using namespace std;
 

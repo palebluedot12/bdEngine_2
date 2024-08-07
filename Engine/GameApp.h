@@ -15,7 +15,9 @@ public:
 	void Loop(MSG& msg);
 
 	virtual void Init();
+	virtual void FixedUpdate();
 	virtual void Update();
+	virtual void LateUpdate();
 	virtual void Render();
 
 protected:

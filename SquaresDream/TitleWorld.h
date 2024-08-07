@@ -8,7 +8,9 @@ public:
 	virtual ~TitleWorld();
 
 	virtual void Init() override;
-	virtual void Update() override;
-	virtual void Render() override;
+	virtual void FixedUpdate() override;
+	virtual void Update(float deltaTime) override;
+	virtual void LateUpdate() override;
+	virtual void Render(ID2D1RenderTarget* pRenderTarget) override;
 };
 

@@ -137,12 +137,10 @@ void GameApp::Loop(MSG& msg)
 		}
 		else
 		{
+			FixedUpdate();
 			Update();
-			D2DRenderer::Get()->GetRenderTarget()->BeginDraw();
-			D2DRenderer::Get()->GetRenderTarget()->Clear(D2D1::ColorF(D2D1::ColorF::Black));
-
+			LateUpdate();
 			Render();
-			D2DRenderer::Get()->GetRenderTarget()->EndDraw();
 		}
 	}
 }
@@ -155,6 +153,10 @@ void GameApp::Init()
 	//ResourceManager::GetInstance()->Init();
 }
 
+void GameApp::FixedUpdate()
+{
+}
+
 void GameApp::Update()
 {
 	//TimeManager::GetInstance()->Update();
@@ -162,7 +164,16 @@ void GameApp::Update()
 	//InputManager::GetInstance()->Update();
 }
 
+void GameApp::LateUpdate()
+{
+
+}
+
 void GameApp::Render()
 {
+	D2DRenderer::Get()->GetRenderTarget()->BeginDraw();
+	D2DRenderer::Get()->GetRenderTarget()->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 	//WorldManager::GetInstance()->Render();
+
+	D2DRenderer::Get()->GetRenderTarget()->EndDraw();
 }

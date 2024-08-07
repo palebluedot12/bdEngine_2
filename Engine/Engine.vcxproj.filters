@@ -1,53 +1,114 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="99. Headers">
+    <Filter Include="98. Headers">
       <UniqueIdentifier>{ae5346ed-7a9d-4d16-963e-84feb79be5d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Renderer">
-      <UniqueIdentifier>{d435c9d3-4bc1-472d-8c30-fa7a98ac9ff2}</UniqueIdentifier>
+    <Filter Include="01. Common">
+      <UniqueIdentifier>{98678708-6e01-402c-9d08-dc280b25090a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Collider">
+    <Filter Include="02. Manager">
+      <UniqueIdentifier>{19f48718-bfa8-41da-b777-193184ce1f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Component">
+      <UniqueIdentifier>{f0e96cba-12b7-4fc5-a929-d428d442cc34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. GameObject">
+      <UniqueIdentifier>{ad9453c6-b597-4c40-9469-58f5541b5d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Collider">
       <UniqueIdentifier>{82b16f42-c26b-4301-aeee-7f1472494dc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06. Renderer">
+      <UniqueIdentifier>{d435c9d3-4bc1-472d-8c30-fa7a98ac9ff2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Component.h" />
     <ClInclude Include="GameApp.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Resource.h" />
     <ClInclude Include="World.h" />
-    <ClInclude Include="WorldManager.h" />
     <ClInclude Include="pch.h">
-      <Filter>99. Headers</Filter>
+      <Filter>98. Headers</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>99. Headers</Filter>
+      <Filter>98. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h" />
     <ClInclude Include="D2DRenderer.h">
-      <Filter>Renderer</Filter>
+      <Filter>06. Renderer</Filter>
     </ClInclude>
     <ClInclude Include="AABB.h">
-      <Filter>Collider</Filter>
+      <Filter>05. Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonEnums.h" />
+    <ClInclude Include="Component.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>04. GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldManager.h">
+      <Filter>02. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderScene.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapScene.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationScene.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Movement.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>01. Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>98. Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="GameApp.cpp" />
-    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="World.cpp" />
-    <ClCompile Include="WorldManager.cpp" />
     <ClCompile Include="pch.cpp">
-      <Filter>99. Headers</Filter>
+      <Filter>98. Headers</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="D2DRenderer.cpp">
-      <Filter>Renderer</Filter>
+      <Filter>06. Renderer</Filter>
     </ClCompile>
     <ClCompile Include="AABB.cpp">
-      <Filter>Collider</Filter>
+      <Filter>05. Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>04. GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldManager.cpp">
+      <Filter>02. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderScene.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapScene.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationScene.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Movement.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>01. Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

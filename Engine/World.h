@@ -11,10 +11,17 @@ public:
 	std::list<GameObject*> m_GameObjects;
 	AABB* m_pCullingBound = nullptr;
 	AABB m_CullingBoundDefault;
+
 public:
-	void Update(float deltaTime);
-	void Render(ID2D1RenderTarget* pRenderTarget);
-	void Clear();
+	virtual void Init();
+	virtual void FixedUpdate();
+	virtual void Update(float deltaTime);
+	virtual void LateUpdate();
+	virtual void Render(ID2D1RenderTarget* pRenderTarget);
+
+	//void Update(float deltaTime);
+	//void Render(ID2D1RenderTarget* pRenderTarget);
+	//void Clear();
 	void SetCullingBound(AABB* pBound) { m_pCullingBound = pBound; }
 	// 템플릿 함수로 GameObject를 생성한다.
 	template<typename T>
