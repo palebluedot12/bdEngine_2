@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
+    <ClInclude Include="AnimationAsset.h" />
     <ClInclude Include="AnimationScene.h" />
     <ClInclude Include="BitmapScene.h" />
     <ClInclude Include="CommonEnums.h" />
@@ -154,8 +155,10 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ReferenceCounter.h" />
     <ClInclude Include="RenderScene.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="World.h" />
@@ -163,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AABB.cpp" />
+    <ClCompile Include="AnimationAsset.cpp" />
     <ClCompile Include="AnimationScene.cpp" />
     <ClCompile Include="BitmapScene.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -177,7 +181,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ReferenceCounter.cpp" />
     <ClCompile Include="RenderScene.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="World.cpp" />

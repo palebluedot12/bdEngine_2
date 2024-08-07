@@ -17,7 +17,12 @@
 #include <cmath>
 #include <list>
 #include <vector>
+#include <map>
 #include "CommonEnums.h"
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
 
 using namespace std;
 
