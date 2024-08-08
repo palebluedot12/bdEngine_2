@@ -7,6 +7,9 @@
     <Filter Include="99. Andromeda">
       <UniqueIdentifier>{9dbf8450-8ced-4e01-a5d2-0049d635e8b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Worlds">
+      <UniqueIdentifier>{9c69b7c6-8875-4f63-8a1b-967bf4f3e9d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquaresDream.h" />
@@ -19,12 +22,22 @@
     <ClInclude Include="Resource.h">
       <Filter>98. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="TitleWorld.h" />
+    <ClInclude Include="TitleWorld.h">
+      <Filter>03. Worlds</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayWorld_1.h">
+      <Filter>03. Worlds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SquaresDream.cpp" />
-    <ClCompile Include="TitleWorld.cpp" />
+    <ClCompile Include="TitleWorld.cpp">
+      <Filter>03. Worlds</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayWorld_1.cpp">
+      <Filter>03. Worlds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico">

@@ -4,6 +4,13 @@ class AnimationAsset;
 class ResourceManager
 {
 public:
+
+	static ResourceManager* Get()
+	{
+		static ResourceManager _instance;
+		return &_instance;
+	}
+
 	ResourceManager();
 	~ResourceManager();
 

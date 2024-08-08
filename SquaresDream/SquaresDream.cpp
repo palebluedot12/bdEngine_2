@@ -1,6 +1,7 @@
 ﻿#include "..\\Engine\\pch.h"
 #include "..\\Engine\\WorldManager.h"
 #include "SquaresDream.h"
+#include "TitleWorld.h"
 
 SquaresDream::SquaresDream()
 {
@@ -16,27 +17,18 @@ void SquaresDream::Init()
 {
 	__super::Init();
 
-	//WorldManager::GetInstance()->ChangeScene<씬이름>();
 }
 
-void SquaresDream::FixedUpdate()
+void SquaresDream::LoadWorld()
 {
-
+	WorldManager::CreateWorld
 }
 
-
-void SquaresDream::Update()
+void SquaresDream::LoadResource()
 {
-	GameApp::Update();
 }
 
-void SquaresDream::LateUpdate()
+void SquaresDream::Release()
 {
-
 }
 
-
-void SquaresDream::Render()
-{
-	GameApp::Render();
-}

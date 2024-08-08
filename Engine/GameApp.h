@@ -1,5 +1,9 @@
 #pragma once
-#include <d2d1.h>
+#include "pch.h"
+#include "D2DRenderer.h"
+#include "WorldManager.h"
+#include "ResourceManager.h"
+
 #define MAX_LOADSTRING 100
 
 class GameApp

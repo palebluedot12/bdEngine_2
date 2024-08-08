@@ -1,10 +1,10 @@
 #include "pch.h"
 #include "GameApp.h"
 #include "D2DRenderer.h"
-//#include "TimeManager.h"
-//#include "WorldManager.h"
-//#include "InputManager.h"
-//#include "ResourceManager.h"
+#include "TimeManager.h"
+#include "WorldManager.h"
+#include "InputManager.h"
+#include "ResourceManager.h"
 
 GameApp::GameApp()
 {
@@ -137,6 +137,8 @@ void GameApp::Loop(MSG& msg)
 		}
 		else
 		{
+			TimeManager::GetInstance()->Update();
+			Input::Update();
 			FixedUpdate();
 			Update();
 			LateUpdate();
@@ -147,20 +149,29 @@ void GameApp::Loop(MSG& msg)
 
 void GameApp::Init()
 {
-	//TimeManager::GetInstance()->Init();
-	//WorldManager::GetInstance()->Init();
-	//InputManager::GetInstance()->Init(hWnd);
-	//ResourceManager::GetInstance()->Init();
+	TimeManager::GetInstance()->Init();
+	Input::Initailize();
+	D2DRenderer::Get()->InitDirect2D(hWnd);
 }
 
 void GameApp::FixedUpdate()
 {
+	static float deltaCount;
+	deltaCount += TimeManager::GetInstance()->GetDeltaTime();
+	while (deltaCount >= 0.02f)
+	{
+		//CollisionManager Ãß°¡
+
+		WorldManager::FixedUpdate();
+		deltaCount -= 0.02f;
+	}
+
 }
 
 void GameApp::Update()
 {
 	//TimeManager::GetInstance()->Update();
-	//WorldManager::GetInstance()->Update();
+	WorldManager::Update();
 	//InputManager::GetInstance()->Update();
 }
 

@@ -7,10 +7,9 @@ public:
 	SquaresDream();
 	~SquaresDream();
 
-	virtual void Init() override;
-	virtual void FixedUpdate() override;
-	virtual void Update() override;
-	virtual void LateUpdate() override;
-	virtual void Render() override;
+	virtual void Init();
+	virtual void Release();
+	void LoadWorld();
+	void LoadResource();
 };
 

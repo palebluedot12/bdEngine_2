@@ -17,7 +17,12 @@ public:
 	virtual void FixedUpdate();
 	virtual void Update(float deltaTime);
 	virtual void LateUpdate();
-	virtual void Render(ID2D1RenderTarget* pRenderTarget);
+	virtual void Render();
+
+	virtual void WorldLoad();
+	virtual void WorldEnter();				// 들어올때마다 해줄 것들
+	virtual void WorldExit();				// 나갈때마다 해줄 것들
+	virtual void WorldDestroy();
 
 	//void Update(float deltaTime);
 	//void Render(ID2D1RenderTarget* pRenderTarget);
@@ -34,6 +39,13 @@ public:
 		m_GameObjects.push_back(newObject);
 		return newObject;
 	}
+
+	std::string		GetName() const { return m_Worldname; }
+	WorldTag		GetTag() const { return m_WorldTag; }
+	void			SetName(std::string _name) { m_Worldname = _name; }
+private:
+	std::string		m_Worldname;
+	WorldTag		m_WorldTag;
 
 
 };
