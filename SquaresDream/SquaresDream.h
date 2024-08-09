@@ -7,7 +7,7 @@ public:
 	SquaresDream();
 	~SquaresDream();
 
-	virtual void Init();
+	virtual void Initialize(_In_ HINSTANCE hInstance, _In_ int nCmdShow);
 	virtual void Release();
 	void LoadWorld();
 	void LoadResource();

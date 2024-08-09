@@ -16,22 +16,22 @@ GameObject::~GameObject()
 	m_OwnedComponents.clear();
 }
 
-void GameObject::Update(float deltaTime)
+void GameObject::Update()
 {
 	for (auto& pComponent : m_OwnedComponents)
 	{
-		pComponent->Update(deltaTime);
+		pComponent->Update();
 	}
 
 	if (m_pRootScene)
 		m_BoundBox.m_Center = m_pRootScene->GetWorldLocation();
 }
 
-void GameObject::Render(ID2D1RenderTarget* pRenderTarget)
+void GameObject::Render()
 {
 	for (auto& pComponent : m_OwnedComponents)
 	{
-		pComponent->Render(pRenderTarget);
+		pComponent->Render();
 	}
 }
 

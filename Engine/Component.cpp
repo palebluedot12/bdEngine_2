@@ -9,10 +9,10 @@ Component::~Component()
 {
 }
 
-void Component::Update(float deltaTime)
+void Component::Update()
 {
 }
 
-void Component::Render(ID2D1RenderTarget* pRenderTarget)
+void Component::Render()
 {
 }

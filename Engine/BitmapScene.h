@@ -17,5 +17,5 @@ public:
 	ID2D1Bitmap* m_pBitmap = nullptr;
 
 	virtual void Update(float fTimeElapsed);
-	virtual void Render(ID2D1RenderTarget* pRenderTarget);
+	virtual void Render();
 };

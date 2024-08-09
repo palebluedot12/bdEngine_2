@@ -17,8 +17,12 @@ void World::FixedUpdate()
 {
 }
 
-void World::Update(float deltaTime)
+void World::Update()
 {
+	for (auto& obj : m_GameObjects)
+	{
+		obj->Update();
+	}
 }
 
 void World::LateUpdate()
@@ -27,20 +31,8 @@ void World::LateUpdate()
 
 void World::Render()
 {
-}
-
-void World::WorldLoad()
-{
-}
-
-void World::WorldEnter()
-{
-}
-
-void World::WorldExit()
-{
-}
-
-void World::WorldDestroy()
-{
+	for (auto* obj : m_GameObjects)
+	{
+		obj->Render();
+	}
 }

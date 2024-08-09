@@ -24,6 +24,7 @@ void WorldManager::Render()
 {
 	if (m_CurrentWorld)
 		m_CurrentWorld->Render();
+
 	// load할 월드가 있으면 이때 바꿈
 	if (m_LoadWorld)
 	{
@@ -54,9 +55,9 @@ bool WorldManager::ChangeWorld(World* _world)
 	}
 }
 
-bool WorldManager::ChangeWorld(std::string _key, WorldTag _tag)
+bool WorldManager::ChangeWorld(std::string _key)
 {
-	World* find = FindWorld(_key, _tag);
+	World* find = FindWorld(_key);
 	bool check = ChangeWorld(find);
 	return check;
 }

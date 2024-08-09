@@ -8,3 +8,11 @@ enum class WorldTag
 	Scene2,
 	SIZE,
 };
+
+enum class DirType
+{
+	UP,
+	RIGHT,
+	DOWN,
+	LEFT,
+};

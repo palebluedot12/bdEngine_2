@@ -121,8 +121,9 @@ void GameApp::Uninitialize()
 }
 
 
-void GameApp::Loop(MSG& msg)
+void GameApp::Loop()
 {
+	MSG msg;
 	// 기본 메시지 루프입니다:
 	while (TRUE)
 	{
@@ -139,6 +140,7 @@ void GameApp::Loop(MSG& msg)
 		{
 			TimeManager::GetInstance()->Update();
 			Input::Update();
+
 			FixedUpdate();
 			Update();
 			LateUpdate();
@@ -182,9 +184,8 @@ void GameApp::LateUpdate()
 
 void GameApp::Render()
 {
-	D2DRenderer::Get()->GetRenderTarget()->BeginDraw();
-	D2DRenderer::Get()->GetRenderTarget()->Clear(D2D1::ColorF(D2D1::ColorF::Black));
-	//WorldManager::GetInstance()->Render();
+	D2DRenderer::Get()->BeginDraw();
+	WorldManager::Render();
+	D2DRenderer::Get()->EndDraw();
 
-	D2DRenderer::Get()->GetRenderTarget()->EndDraw();
 }

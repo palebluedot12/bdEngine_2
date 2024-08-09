@@ -81,6 +81,15 @@
     <ClInclude Include="ReferenceCounter.h">
       <Filter>01. Common</Filter>
     </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>01. Common</Filter>
+    </ClInclude>
+    <ClInclude Include="FiniteStateMachine.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="FSMState.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
@@ -131,6 +140,15 @@
     </ClCompile>
     <ClCompile Include="ReferenceCounter.cpp">
       <Filter>01. Common</Filter>
+    </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
+      <Filter>01. Common</Filter>
+    </ClCompile>
+    <ClCompile Include="FiniteStateMachine.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="FSMState.cpp">
+      <Filter>03. Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

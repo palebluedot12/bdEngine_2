@@ -19,7 +19,7 @@ public:
 	GameObject* GetOwner() { return m_pOwner; }
 	void SetOwner(GameObject* pOwner) { m_pOwner = pOwner; }
 
-	virtual void Update(float deltaTime);
-	virtual void Render(ID2D1RenderTarget* pRenderTarget);
+	virtual void Update();
+	virtual void Render();
 };
 

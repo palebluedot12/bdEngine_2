@@ -15,8 +15,8 @@ public:
 	World* m_pOwner = nullptr;					// 이 게임 오브젝트가 속한 월드
 	AABB m_BoundBox;	
 
-	void Update(float deltaTime);
-	void Render(ID2D1RenderTarget* pRenderTarget);
+	void Update();
+	void Render();
 	void SetRootScene(Scene* pRootComponent) { m_pRootScene = pRootComponent; }
 	const AABB& GetBoundBox() const { return m_BoundBox; }
 	void AddComponent(Component* pComponent);
@@ -32,6 +32,16 @@ public:
 		T* pComponent = new T();
 		AddComponent(pComponent);
 		return pComponent;
+	}
+
+	template<class T>
+	T* GetComponent()
+	{
+		for (auto component : _components)
+		{
+			if (dynamic_cast<T*>(component) != nullptr)
+				return dynamic_cast<T*>(component);
+		}
 	}
 
 };

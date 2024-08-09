@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BitmapScene.h"
 #include "ResourceManager.h"
+#include "D2DRenderer.h"
 
 BitmapScene::BitmapScene()
 {
@@ -35,10 +36,10 @@ void BitmapScene::Update(float fTimeElapsed)
 	UpdateTrasnform();
 }
 
-void BitmapScene::Render(ID2D1RenderTarget* pRenderTarget)
+void BitmapScene::Render()
 {
 	assert(m_pBitmap != nullptr);
-	pRenderTarget->SetTransform(m_WorldTransform);
-	pRenderTarget->DrawBitmap(m_pBitmap);
+	D2DRenderer::Get()->GetRenderTarget()->SetTransform(m_WorldTransform);
+	D2DRenderer::Get()->GetRenderTarget()->DrawBitmap(m_pBitmap);
 }
 

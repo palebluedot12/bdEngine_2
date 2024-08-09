@@ -12,25 +12,25 @@ public:
 	static void Release();
 
 	static bool ChangeWorld(World* _world);		// 상태만 체크
-	static bool ChangeWorld(std::string _key, WorldTag _tag = WorldTag::Default);
+	static bool ChangeWorld(std::string _key);
 
 	static World* GetCurrentWorld() { return m_CurrentWorld; }
 
 	// World를 추가한 후 World* 타입을 반환
 	template <typename T>
-	static T* CreateWorld(std::string _key, WorldTag _tag)
+	static T* CreateWorld(std::string _key)
 	{
 		T* _world = new T();
 		if (!m_CurrentWorld) m_CurrentWorld = _world;
 		_world->SetName(_key);
-		_world->SetTag(_tag);
+		//_world->SetTag(_tag);
 		_world->WorldLoad();
 		m_WorldList.push_back(_world);
 		return _world;
 	}
 
 	// World를 검색
-	static World* FindWorld(std::string _key, WorldTag _tag = WorldTag::Default)
+	static World* FindWorld(std::string _key)
 	{
 		for (const auto& world : m_WorldList)
 		{
@@ -41,7 +41,7 @@ public:
 	}
 
 	// 해당 World를 삭제
-	static bool DestroyWorld(std::string _key, WorldTag _tag = WorldTag::Default)
+	static bool DestroyWorld(std::string _key)
 	{
 		for (auto it = m_WorldList.begin(); it != m_WorldList.end(); ++it)
 		{

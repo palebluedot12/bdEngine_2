@@ -16,13 +16,13 @@ public:
 public:
 	int Initialize(HINSTANCE hInstance, int nCmdShow);
 	void Uninitialize();
-	void Loop(MSG& msg);
+	void Loop();
 
-	virtual void Init();
-	virtual void FixedUpdate();
-	virtual void Update();
-	virtual void LateUpdate();
-	virtual void Render();
+	void Init();
+	void FixedUpdate();
+	void Update();
+	void LateUpdate();
+	void Render();
 
 protected:
 	HINSTANCE hInst{};

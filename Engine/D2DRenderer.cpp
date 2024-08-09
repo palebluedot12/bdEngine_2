@@ -93,6 +93,18 @@ void D2DRenderer::UninitDirect2D()
 	CoUninitialize();
 }
 
+void D2DRenderer::BeginDraw()
+{
+	pRenderTarget->BeginDraw();
+
+	pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
+}
+
+void D2DRenderer::EndDraw()
+{
+	pRenderTarget->EndDraw();
+}
+
 void D2DRenderer::CreateBrushes()
 {
 	pBrushes[Color::BLACK] = nullptr;

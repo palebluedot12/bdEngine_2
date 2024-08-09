@@ -1,6 +1,8 @@
 #pragma once
 #include "GameObject.h"
 #include "AABB.h"
+#include "BitmapScene.h"
+#include "Movement.h"
 
 class World
 {
@@ -13,16 +15,16 @@ public:
 	AABB m_CullingBoundDefault;
 
 public:
-	virtual void Init();
-	virtual void FixedUpdate();
-	virtual void Update(float deltaTime);
-	virtual void LateUpdate();
-	virtual void Render();
+	void Init();
+	void FixedUpdate();
+	void Update();
+	void LateUpdate();
+	void Render();
 
-	virtual void WorldLoad();
-	virtual void WorldEnter();				// 들어올때마다 해줄 것들
-	virtual void WorldExit();				// 나갈때마다 해줄 것들
-	virtual void WorldDestroy();
+	virtual void WorldLoad() {};
+	virtual void WorldEnter() {};				// 들어올때마다 해줄 것들
+	virtual void WorldExit() {};				// 나갈때마다 해줄 것들
+	virtual void WorldDestroy() {};
 
 	//void Update(float deltaTime);
 	//void Render(ID2D1RenderTarget* pRenderTarget);

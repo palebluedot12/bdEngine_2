@@ -17,6 +17,9 @@ public:
 	BOOL InitDirect2D(HWND hWnd);
 	void UninitDirect2D();
 	ID2D1HwndRenderTarget* GetRenderTarget() { return pRenderTarget; }
+	IWICImagingFactory* GetWICFactory() { return pWICFactory; }
+	void BeginDraw();
+	void EndDraw();
 
 	void CreateBrushes();
 	//Text
