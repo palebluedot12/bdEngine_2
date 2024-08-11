@@ -13,13 +13,16 @@ public:
 	Component();
 	virtual ~Component();
 
-	GameObject* m_pOwner = nullptr;
-
 public:
-	GameObject* GetOwner() { return m_pOwner; }
-	void SetOwner(GameObject* pOwner) { m_pOwner = pOwner; }
+	GameObject* GetOwner() { return m_Owner; }
+	void SetOwner(GameObject* pOwner) { m_Owner = pOwner; }
 
+	virtual void Init();
 	virtual void Update();
 	virtual void Render();
+
+protected:
+	GameObject* m_Owner = nullptr;
+
 };
 

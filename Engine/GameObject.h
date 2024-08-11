@@ -37,7 +37,7 @@ public:
 	template<class T>
 	T* GetComponent()
 	{
-		for (auto component : _components)
+		for (auto component : m_OwnedComponents)
 		{
 			if (dynamic_cast<T*>(component) != nullptr)
 				return dynamic_cast<T*>(component);

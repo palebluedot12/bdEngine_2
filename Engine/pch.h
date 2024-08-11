@@ -22,9 +22,10 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
+#include "MathHelper.h"
 
 using namespace std;
+using namespace MathHelper;
 
 class Vector2D
 {
@@ -49,7 +50,7 @@ public:
 	{
 		return Vector2D{ x + other.x, y + other.y };
 	}
-	bool operator == (Vector2D other)
+	bool operator ==(Vector2D other)
 	{
 		return (x == other.x && y == other.y);
 	}
@@ -72,5 +73,3 @@ enum class Color
 	BLACK = D2D1::ColorF::Black,
 	WHITE = D2D1::ColorF::White
 };
-
-enum EDirType { UP, RIGHT, DOWN, LEFT };

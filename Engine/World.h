@@ -43,11 +43,11 @@ public:
 	}
 
 	std::string		GetName() const { return m_Worldname; }
-	WorldTag		GetTag() const { return m_WorldTag; }
+	eWorldTag		GetTag() const { return m_WorldTag; }
 	void			SetName(std::string _name) { m_Worldname = _name; }
 private:
 	std::string		m_Worldname;
-	WorldTag		m_WorldTag;
+	eWorldTag		m_WorldTag;
 
 
 };

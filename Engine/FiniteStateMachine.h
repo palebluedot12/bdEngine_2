@@ -7,32 +7,32 @@ class FiniteStateMachine : public Component
 public:
 	FiniteStateMachine();
 	virtual ~FiniteStateMachine();
-	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Render() override;
 
-	FSMState* GetNowState() { return _nowState; }
+	FSMState* GetNowState() { return m_NowState; }
 
 	template<typename T, typename = std::enable_if<std::is_base_of<FSMState, T>::value>>
 	void ChangeState()
 	{
-		if (!_nowState || !std::is_same_v<T, std::decay_t<decltype(*_nowState)>>)
+		// 현재 상태(m_Nowstate)가 없거나, 새로운 상태 T가 현재 상태와 다른 타입일 때
+		if (!m_NowState || !std::is_same_v<T, std::decay_t<decltype(*m_NowState)>>)
 		{
-			if (_nowState)
+			if (m_NowState)
 			{
-				_nowState->Exit();
-				delete _nowState;
+				m_NowState->Exit();
+				delete m_NowState;
 			}
 
-			_nowState = new T;
-			_nowState->SetOwner(_owner);
-			_nowState->SetFSM(this);
+			m_NowState = new T;
+			m_NowState->SetOwner(m_Owner);
+			m_NowState->SetFSM(this);
 		}
-		_nowState->Enter();
+		m_NowState->Enter();
 	}
 
 private:
-	FSMState* _nowState = nullptr;
+	FSMState* m_NowState = nullptr;
 
 };
 

@@ -13,6 +13,8 @@ public:
 		return &renderer;
 	}
 
+	static D2D1_MATRIX_3X2_F m_CameraWorldInverse;		// 카메라의 좌표계로 변환하는 카메라 월드의 역행렬
+
 public:
 	BOOL InitDirect2D(HWND hWnd);
 	void UninitDirect2D();

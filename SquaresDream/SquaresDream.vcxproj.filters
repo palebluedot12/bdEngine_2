@@ -10,6 +10,12 @@
     <Filter Include="03. Worlds">
       <UniqueIdentifier>{9c69b7c6-8875-4f63-8a1b-967bf4f3e9d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Objects">
+      <UniqueIdentifier>{ac82b044-f44b-49b4-8b10-2d04b10070a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. States">
+      <UniqueIdentifier>{96bf2c4d-8d5a-4857-842a-7812021b4b7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquaresDream.h" />
@@ -28,6 +34,15 @@
     <ClInclude Include="PlayWorld_1.h">
       <Filter>03. Worlds</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>04. Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWalkState.h">
+      <Filter>05. States</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerIdleState.h">
+      <Filter>05. States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -37,6 +52,15 @@
     </ClCompile>
     <ClCompile Include="PlayWorld_1.cpp">
       <Filter>03. Worlds</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>04. Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerWalkState.cpp">
+      <Filter>05. States</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerIdleState.cpp">
+      <Filter>05. States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

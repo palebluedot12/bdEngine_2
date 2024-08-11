@@ -24,7 +24,7 @@ void Scene::UpdateTrasnform()
 		m_WorldTransform = m_RelativeTransform;
 }
 
-void Scene::Update(float deltaTime)
+void Scene::Update()
 {
 	UpdateTrasnform();
 }

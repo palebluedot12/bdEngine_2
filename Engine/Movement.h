@@ -15,7 +15,7 @@ protected:
 	MathHelper::Vector2F	m_Velocity;		// 속도 벡터
 	Scene* m_pRootScene; // 위치를 변경할 컴포넌트
 public:
-	virtual void Update(float deltaTime);
+	virtual void Update() override;
 
 	void SetSceneComponent(Scene* val) { m_pRootScene = val; }
 	void SetSpeed(float speed) { m_Speed = speed; };

@@ -7,17 +7,13 @@ FiniteStateMachine::FiniteStateMachine()
 
 FiniteStateMachine::~FiniteStateMachine()
 {
-	if (_nowState)
-		delete _nowState;
-}
-
-void FiniteStateMachine::Init()
-{
+	if (m_NowState)
+		delete m_NowState;
 }
 
 void FiniteStateMachine::Update()
 {
-	_nowState->Update();
+	m_NowState->Update();
 }
 
 void FiniteStateMachine::Render()

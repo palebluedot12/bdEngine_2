@@ -15,7 +15,7 @@ BOOL GameApp::InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
 	hInst = hInstance;
 
-	SIZE clientSize = { 1920, 1080 };
+	SIZE clientSize = { 1280, 720 };
 	RECT clientRect = { 0, 0, clientSize.cx, clientSize.cy };
 	AdjustWindowRect(&clientRect, WS_OVERLAPPEDWINDOW, FALSE);
 

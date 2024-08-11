@@ -132,6 +132,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerIdleState.h" />
+    <ClInclude Include="PlayerWalkState.h" />
     <ClInclude Include="PlayWorld_1.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SquaresDream.h" />
@@ -140,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerIdleState.cpp" />
+    <ClCompile Include="PlayerWalkState.cpp" />
     <ClCompile Include="PlayWorld_1.cpp" />
     <ClCompile Include="SquaresDream.cpp" />
     <ClCompile Include="TitleWorld.cpp" />

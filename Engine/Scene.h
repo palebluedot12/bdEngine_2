@@ -26,8 +26,10 @@ public:
 		return out;
 	}
 
-	virtual void Update(float deltaTime);
+	virtual void Update() override;
 	void DrawDebugScene(ID2D1RenderTarget* pRenderTarget);
+
+	void SetRelativeScale(float x, float y) { m_RelativeScale.x = x; m_RelativeScale.y = y; }
 
 	void SetRelativeRotation(float Rotation);
 	void AddRelativeRotation(float Rotation);
@@ -36,5 +38,6 @@ public:
 	void SetRelativeLocation(const D2D1_VECTOR_2F& Location);
 	void AddRelativeLocation(float x, float y);
 	const D2D1_VECTOR_2F& GetRelativeLocation() { return m_RelativeLocation; }
+
 };
 

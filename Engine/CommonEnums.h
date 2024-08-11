@@ -1,6 +1,6 @@
 #pragma once
 
-enum class WorldTag
+enum class eWorldTag
 {
 	Default,
 	Title,
@@ -9,7 +9,7 @@ enum class WorldTag
 	SIZE,
 };
 
-enum class DirType
+enum class eDirType
 {
 	UP,
 	RIGHT,

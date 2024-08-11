@@ -10,10 +10,10 @@ public:
 	virtual void Update() abstract;
 	virtual void Exit() abstract;
 
-	void SetOwner(class Object* owner) { _owner = owner; }
-	void SetFSM(class FiniteStateMachine* fsm) { _fsm = fsm; }
+	void SetOwner(class GameObject* owner) { m_Owner = owner; }
+	void SetFSM(class FiniteStateMachine* fsm) { m_Fsm = fsm; }
 
 protected:
-	class Object* _owner = nullptr;
-	class FiniteStateMachine* _fsm = nullptr;
+	class GameObject* m_Owner = nullptr;
+	class FiniteStateMachine* m_Fsm = nullptr;
 };
