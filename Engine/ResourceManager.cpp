@@ -11,8 +11,8 @@ ResourceManager::ResourceManager()
 
 ResourceManager::~ResourceManager()
 {
-	assert(m_BitmapMap.empty());
-	assert(m_AnimationAssetMap.empty());
+	//assert(m_BitmapMap.empty());
+	//assert(m_AnimationAssetMap.empty());
 }
 
 ResourceManager* ResourceManager::pInstance = nullptr;

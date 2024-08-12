@@ -3,6 +3,7 @@
 #include "AABB.h"
 #include "BitmapScene.h"
 #include "Movement.h"
+#include "CameraScene.h"
 
 class World
 {

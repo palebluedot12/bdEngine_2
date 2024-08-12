@@ -2,17 +2,15 @@
 #include "..\\Engine\\pch.h"
 #include "..\\Engine\\GameObject.h"
 
-
-class Player : public GameObject
+class PlayerChild : public GameObject
 {
 public:
-	Player();
-	virtual ~Player();
+	PlayerChild();
+	virtual ~PlayerChild();
 
 	virtual void Init();
 	virtual void Update();
 	virtual void Render();
-	void AddChildObject(GameObject* obj);
 
 	// Collision 관련 함수들 추가
 
@@ -21,6 +19,5 @@ public:
 
 private:
 	eDirType m_Dir;
-	GameObject* m_pChildObject;
 };
 

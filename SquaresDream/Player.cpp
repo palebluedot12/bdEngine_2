@@ -6,7 +6,7 @@
 #include "..\\Engine\\ResourceManager.h"
 #include "PlayerIdleState.h"
 #include "PlayerWalkState.h"
-
+#include "..\\Engine\\World.h"
 
 Player::Player()
 {
@@ -15,12 +15,11 @@ Player::Player()
 
 	Movement* move = CreateComponent<Movement>();
 	CreateComponent<FiniteStateMachine>();
-
 	
 	// 비트맵 로드
 	ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
 	bit->SetRelativeScale(2.0, 2.0);
-	move->SetSpeed(100.0f);
+	//move->SetSpeed(100.0f);
 
 	GetComponent<FiniteStateMachine>()->ChangeState<PlayerIdleState>();
 }
@@ -41,4 +40,22 @@ void Player::Update()
 void Player::Render()
 {
 	__super::Render();
+}
+
+void Player::AddChildObject(GameObject* obj)
+{
+    // 자식 객체 생성
+    BitmapScene* childBit = obj->CreateComponent<BitmapScene>();
+    obj->SetRootScene(childBit);
+
+    // 자식의 BitmapScene을 현재 Player의 RootScene의 자식으로 설정
+    if (m_pRootScene)
+    {
+        childBit->SetParentScene(m_pRootScene);
+    }
+
+    // 자식 객체 초기화
+    ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\Circle.png", &(childBit->m_pBitmap));
+    childBit->SetRelativeScale(0.3f, 0.3f);
+    childBit->SetRelativeLocation(D2D1::Vector2F(30, 10));  // 부모를 기준으로 한 상대 위치
 }

@@ -101,6 +101,9 @@
     <ClInclude Include="AnimationAsset.h">
       <Filter>03. Component\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CameraScene.h">
+      <Filter>03. Component\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
@@ -161,6 +164,9 @@
       <Filter>03. Component\Scene</Filter>
     </ClCompile>
     <ClCompile Include="AnimationAsset.cpp">
+      <Filter>03. Component\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraScene.cpp">
       <Filter>03. Component\Scene</Filter>
     </ClCompile>
   </ItemGroup>

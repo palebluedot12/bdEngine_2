@@ -147,6 +147,7 @@
     <ClInclude Include="AnimationAsset.h" />
     <ClInclude Include="AnimationScene.h" />
     <ClInclude Include="BitmapScene.h" />
+    <ClInclude Include="CameraScene.h" />
     <ClInclude Include="CommonEnums.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="D2DRenderer.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="AnimationAsset.cpp" />
     <ClCompile Include="AnimationScene.cpp" />
     <ClCompile Include="BitmapScene.cpp" />
+    <ClCompile Include="CameraScene.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="D2DRenderer.cpp" />
     <ClCompile Include="Engine.cpp" />

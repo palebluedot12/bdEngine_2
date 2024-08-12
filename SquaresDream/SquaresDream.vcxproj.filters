@@ -43,6 +43,9 @@
     <ClInclude Include="PlayerIdleState.h">
       <Filter>05. States</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerChild.h">
+      <Filter>04. Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -61,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="PlayerIdleState.cpp">
       <Filter>05. States</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerChild.cpp">
+      <Filter>04. Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
