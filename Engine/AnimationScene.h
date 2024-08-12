@@ -41,8 +41,8 @@ public:
 
 	bool IsAnimationEnd();		// 애니메이션 종료 여부
 	void LoadAnimationAsset(const std::wstring strFilePath);
-	virtual void Update(float fTimeElapsed);
-	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget);
+	virtual void Update() override;
+	virtual void Render() override;
 	void SetAnimation(int index, bool mirror);
 	void SetAnimationProcesser(IAnimationProcesser* pAnimationProcesser) { m_pAnimationProcesser = pAnimationProcesser; }
 };

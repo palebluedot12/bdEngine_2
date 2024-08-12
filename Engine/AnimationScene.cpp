@@ -31,9 +31,9 @@ void AnimationScene::LoadAnimationAsset(const std::wstring strFilePath)
 	m_strAnimationAssetFilePath = strFilePath;
 }
 
-void AnimationScene::Update(float fTimeElapsed)
+void AnimationScene::Update()
 {
-	__super::Update(fTimeElapsed);
+	__super::Update();
 	assert(m_pAnimationAsset != nullptr);  // assetÀÌ ¾øÀ¸¸é debug¸ðµå¿¡¼­ ¸ØÃã
 	if (m_pAnimationInfo == nullptr)
 		return;
@@ -74,14 +74,14 @@ void AnimationScene::Update(float fTimeElapsed)
 	}
 }
 
-void AnimationScene::Render(ID2D1HwndRenderTarget* pRenderTarget)
+void AnimationScene::Render()
 {
 	if (m_pAnimationInfo == nullptr)
 		return;
 
 	D2D1_MATRIX_3X2_F Transform = m_RenderTransform * m_WorldTransform * D2DRenderer::m_CameraWorldInverse;
-	pRenderTarget->SetTransform(Transform);
-	pRenderTarget->DrawBitmap(m_pBitmap, m_DstRect, 1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, m_SrcRect);
+	D2DRenderer::Get()->GetRenderTarget()->SetTransform(Transform);
+	D2DRenderer::Get()->GetRenderTarget()->DrawBitmap(m_pBitmap, m_DstRect, 1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, m_SrcRect);
 }
 
 void AnimationScene::SetAnimation(int index, bool mirror)

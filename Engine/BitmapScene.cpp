@@ -31,9 +31,9 @@ void BitmapScene::LoadD2DBitmap(const std::wstring strFilePath)
 	m_strBitmapFilePath = strFilePath;
 }
 
-void BitmapScene::Update(float fTimeElapsed)
+void BitmapScene::Update()
 {
-	UpdateTrasnform();
+	UpdateTransform();
 }
 
 void BitmapScene::Render()

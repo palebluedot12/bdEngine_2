@@ -28,22 +28,22 @@ void PlayerWalkState::MoveByInput()
 	Movement* movement = m_Owner->GetComponent<Movement>();
 
 	movement->SetDirection({ 0, 0 });
-	if (Input::GetKeyDown(eKeyCode::W))
+	if (Input::GetKey(eKeyCode::W))
 	{
 		m_Player->SetDir(eDirType::UP);
 		movement->SetDirection({ 0, -1 });
 	}
-	if (Input::GetKeyDown(eKeyCode::S))
+	if (Input::GetKey(eKeyCode::S))
 	{
 		m_Player->SetDir(eDirType::DOWN);
 		movement->SetDirection({ 0, 1 });
 	}
-	if (Input::GetKeyDown(eKeyCode::D))
+	if (Input::GetKey(eKeyCode::D))
 	{
 		m_Player->SetDir(eDirType::RIGHT);
 		movement->SetDirection({ 1, 0 });
 	}
-	if (Input::GetKeyDown(eKeyCode::A))
+	if (Input::GetKey(eKeyCode::A))
 	{
 		m_Player->SetDir(eDirType::LEFT);
 		movement->SetDirection({ -1, 0 });

@@ -20,11 +20,5 @@ public:
 
 private:
 	eDirType m_Dir;
-
-
-	
-	
-
-
 };
 

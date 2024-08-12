@@ -16,6 +16,6 @@ public:
 	std::wstring m_strBitmapFilePath;
 	ID2D1Bitmap* m_pBitmap = nullptr;
 
-	virtual void Update(float fTimeElapsed);
-	virtual void Render();
+	virtual void Update() override;
+	virtual void Render() override;
 };

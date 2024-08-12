@@ -2,11 +2,27 @@
 #include "Player.h"
 #include "..\\Engine\\FiniteStateMachine.h"
 #include "..\\Engine\\Movement.h"
+#include "..\\Engine\\BitmapScene.h"
+#include "..\\Engine\\ResourceManager.h"
+#include "PlayerIdleState.h"
+#include "PlayerWalkState.h"
+
 
 Player::Player()
 {
+	BitmapScene* bit = CreateComponent<BitmapScene>();
+	SetRootScene(bit);
+
+	Movement* move = CreateComponent<Movement>();
 	CreateComponent<FiniteStateMachine>();
-	CreateComponent<Movement>();
+
+	
+	// ºñÆ®¸Ê ·Îµå
+	ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
+	bit->SetRelativeScale(2.0, 2.0);
+	move->SetSpeed(100.0f);
+
+	GetComponent<FiniteStateMachine>()->ChangeState<PlayerIdleState>();
 }
 
 Player::~Player()

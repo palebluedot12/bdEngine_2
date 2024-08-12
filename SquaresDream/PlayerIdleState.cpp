@@ -6,6 +6,7 @@
 #include "..\\Engine\\InputManager.h"
 #include "Player.h"
 #include "..\\Engine\\FiniteStateMachine.h"
+#include "..\\Engine\\WorldManager.h"
 
 void PlayerIdleState::Enter()
 {
@@ -28,24 +29,29 @@ void PlayerIdleState::MoveByInput()
 {
 	Movement* movement = m_Owner->GetComponent<Movement>();
 
-	if (Input::GetKeyDown(eKeyCode::W))
+	if (Input::GetKey(eKeyCode::W))
 	{
 		m_Player->SetDir(eDirType::UP);
 		m_Fsm->ChangeState<PlayerWalkState>();
 	}
-	if (Input::GetKeyDown(eKeyCode::S))
+	if (Input::GetKey(eKeyCode::S))
 	{
 		m_Player->SetDir(eDirType::DOWN);
 		m_Fsm->ChangeState<PlayerWalkState>();
 	}
-	if (Input::GetKeyDown(eKeyCode::D))
+	if (Input::GetKey(eKeyCode::D))
 	{
 		m_Player->SetDir(eDirType::RIGHT);
 		m_Fsm->ChangeState<PlayerWalkState>();
 	}
-	if (Input::GetKeyDown(eKeyCode::A))
+	if (Input::GetKey(eKeyCode::A))
 	{
 		m_Player->SetDir(eDirType::LEFT);
 		m_Fsm->ChangeState<PlayerWalkState>();
+	}
+
+	if (Input::GetKey(eKeyCode::Enter))
+	{
+		WorldManager::ChangeWorld("Title");
 	}
 }

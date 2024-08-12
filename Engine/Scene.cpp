@@ -12,7 +12,7 @@ Scene::~Scene()
 
 }
 
-void Scene::UpdateTrasnform()
+void Scene::UpdateTransform()
 {
 	m_RelativeTransform = D2D1::Matrix3x2F::Scale(D2D1::SizeF(m_RelativeScale.x, m_RelativeScale.y)) *
 		D2D1::Matrix3x2F::Rotation(m_RelativeRotation) *
@@ -26,7 +26,7 @@ void Scene::UpdateTrasnform()
 
 void Scene::Update()
 {
-	UpdateTrasnform();
+	UpdateTransform();
 }
 
 

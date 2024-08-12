@@ -14,16 +14,12 @@ void PlayWorld_1::WorldDestroy()
 
 void PlayWorld_1::WorldEnter()
 {
-	// 오브젝트 만들고, 컴포넌트 붙이기
+	// 오브젝트 만들기. (컴포넌트는 각 오브젝트 클래스의 생성자에서 붙임)
 	{
 		Player* p = CreateGameObject<Player>();
-		BitmapScene* bit = p->CreateComponent<BitmapScene>();
-		ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\3.png", &(bit->m_pBitmap));
-		Movement* move = p->CreateComponent<Movement>();
-		p->GetComponent<FiniteStateMachine>()->ChangeState<PlayerIdleState>();
 
-		bit->SetRelativeScale(0.5, 0.5);
-		//bit->SetRelativeLocation(D2D1::Vector2F(500, 0));
+		Player* p2 = CreateGameObject<Player>();
+		p2->Set
 	}
 }
 

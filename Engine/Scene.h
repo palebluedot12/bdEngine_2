@@ -16,7 +16,7 @@ public:
 	D2D_MATRIX_3X2_F	m_WorldTransform;    // 부모까지 반영된 최종 변환
 
 	// RelativeTransform과 	m_WorldTransform을 계산한다.
-	void UpdateTrasnform();
+	void UpdateTransform();
 	void SetParentScene(Scene* pParentScene) { m_pParentScene = pParentScene; }
 	D2D1_VECTOR_2F GetWorldLocation()
 	{
