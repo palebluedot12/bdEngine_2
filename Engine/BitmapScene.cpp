@@ -39,7 +39,7 @@ void BitmapScene::Update()
 void BitmapScene::Render()
 {
 	assert(m_pBitmap != nullptr);
-	D2DRenderer::Get()->GetRenderTarget()->SetTransform(m_WorldTransform);
+	//D2DRenderer::Get()->GetRenderTarget()->SetTransform(m_WorldTransform);
 	D2DRenderer::Get()->GetRenderTarget()->DrawBitmap(m_pBitmap);
 }
 
