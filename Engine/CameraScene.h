@@ -11,7 +11,9 @@ public:
 	virtual ~CameraScene();
 
 	AABB m_ViewBoundBox;
+	Scene* m_Target = nullptr;
 
 	virtual void Update() override;
+	void SetTarget(Scene* target) { m_Target = target; }
 };
 

@@ -57,6 +57,12 @@ void Scene::SetRelativeLocation(const D2D1_VECTOR_2F& Location)
 	m_RelativeLocation = Location;
 }
 
+void Scene::SetRelativeLocation(float x, float y)
+{
+	m_RelativeLocation.x = x;
+	m_RelativeLocation.y = y;
+}
+
 void Scene::AddRelativeLocation(float x, float y)
 {
 	m_RelativeLocation = { m_RelativeLocation.x + x,m_RelativeLocation.y + y };

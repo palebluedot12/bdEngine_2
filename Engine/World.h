@@ -4,6 +4,7 @@
 #include "BitmapScene.h"
 #include "Movement.h"
 #include "CameraScene.h"
+#include "D2DRenderer.h"
 
 class World
 {
@@ -14,6 +15,9 @@ public:
 	std::list<GameObject*> m_GameObjects;
 	AABB* m_pCullingBound = nullptr;
 	AABB m_CullingBoundDefault;
+
+	void SetActiveCamera(CameraScene* camera) { m_ActiveCamera = camera; }
+	CameraScene* GetActiveCamera() const { return m_ActiveCamera; }
 
 public:
 	void Init();
@@ -50,6 +54,8 @@ private:
 	std::string		m_Worldname;
 	eWorldTag		m_WorldTag;
 
+protected:
+	CameraScene* m_ActiveCamera = nullptr; 
 
 };
 

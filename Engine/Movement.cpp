@@ -29,9 +29,6 @@ void Movement::Update()
 	//새로 계산된 위치를 적용한다.
 	rootScene->SetRelativeLocation(Location);
 
-	wchar_t debugStr[256];
-	swprintf_s(debugStr, L"Movement::Update - New Location: (%f, %f)\n", Location.x, Location.y);
-	OutputDebugString(debugStr);
 }
 
 void Movement::SetDirection(const MathHelper::Vector2F& Direction)
