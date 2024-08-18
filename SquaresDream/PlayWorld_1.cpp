@@ -18,14 +18,15 @@ void PlayWorld_1::WorldEnter()
 	{
 		Player* p = CreateGameObject<Player>();
 		p->m_pRootScene->SetRelativeLocation(640.0f, 360.0f);
-		
+
+		// 플레이어에 카메라 붙이기
 		GameObject* cameraObj = CreateGameObject<GameObject>();
 		CameraScene* cam = cameraObj->CreateComponent<CameraScene>();
 		cameraObj->SetRootScene(cam);
 		cam->SetTarget(p->m_pRootScene);
-
 		SetActiveCamera(cam);
 
+		// 자식
 		GameObject* child = CreateGameObject<GameObject>();
 		p->AddChildObject(child);
 	}

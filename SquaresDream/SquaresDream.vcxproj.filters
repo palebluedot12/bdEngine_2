@@ -13,20 +13,23 @@
     <Filter Include="05. States">
       <UniqueIdentifier>{96bf2c4d-8d5a-4857-842a-7812021b4b7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="05. States\98. Headers">
+    <Filter Include="06.Components">
+      <UniqueIdentifier>{48740814-176e-4e38-b8d5-76165348fbe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Headers">
       <UniqueIdentifier>{b3fed996-b2ea-4e7d-ac85-41b7bb6bca4a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquaresDream.h" />
     <ClInclude Include="targetver.h">
-      <Filter>05. States\98. Headers</Filter>
+      <Filter>98. Headers</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>05. States\98. Headers</Filter>
+      <Filter>98. Headers</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>05. States\98. Headers</Filter>
+      <Filter>98. Headers</Filter>
     </ClInclude>
     <ClInclude Include="TitleWorld.h">
       <Filter>03. Worlds</Filter>
@@ -45,6 +48,15 @@
     </ClInclude>
     <ClInclude Include="PlayerChild.h">
       <Filter>04. Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareMovement.h">
+      <Filter>06.Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareIdleState.h">
+      <Filter>05. States</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareRollingState.h">
+      <Filter>05. States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +79,15 @@
     </ClCompile>
     <ClCompile Include="PlayerChild.cpp">
       <Filter>04. Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareMovement.cpp">
+      <Filter>06.Components</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareIdleState.cpp">
+      <Filter>05. States</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareRollingState.cpp">
+      <Filter>05. States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -140,7 +140,7 @@ void GameApp::Loop()
 		}
 		else
 		{
-			TimeManager::GetInstance()->Update();
+			TimeManager::Get()->Update();
 			Input::Update();
 
 			FixedUpdate();
@@ -153,7 +153,7 @@ void GameApp::Loop()
 
 void GameApp::Init()
 {
-	TimeManager::GetInstance()->Init();
+	TimeManager::Get()->Init();
 	Input::Initailize();
 	D2DRenderer::Get()->InitDirect2D(hWnd);
 }
@@ -161,7 +161,7 @@ void GameApp::Init()
 void GameApp::FixedUpdate()
 {
 	static float deltaCount;
-	deltaCount += TimeManager::GetInstance()->GetDeltaTime();
+	deltaCount += TimeManager::Get()->GetDeltaTime();
 	while (deltaCount >= 0.02f)
 	{
 		//CollisionManager Ãß°¡

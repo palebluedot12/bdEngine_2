@@ -1,6 +1,7 @@
 #include "..\\Engine\\pch.h"
 #include "PlayerIdleState.h"
 #include "PlayerWalkState.h"
+#include "SquareRollingState.h"
 #include "..\\Engine\\Movement.h"
 #include "..\\Engine\\GameObject.h"
 #include "..\\Engine\\InputManager.h"
@@ -42,12 +43,12 @@ void PlayerIdleState::MoveByInput()
 	if (Input::GetKey(eKeyCode::D))
 	{
 		m_Player->SetDir(eDirType::RIGHT);
-		m_Fsm->ChangeState<PlayerWalkState>();
+		m_Fsm->ChangeState<SquareRollingState>();
 	}
 	if (Input::GetKey(eKeyCode::A))
 	{
 		m_Player->SetDir(eDirType::LEFT);
-		m_Fsm->ChangeState<PlayerWalkState>();
+		m_Fsm->ChangeState<SquareRollingState>();
 	}
 
 	if (Input::GetKey(eKeyCode::Enter))

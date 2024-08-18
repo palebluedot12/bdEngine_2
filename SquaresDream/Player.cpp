@@ -35,6 +35,7 @@ void Player::Init()
 void Player::Update()
 {
 	__super::Update();
+	
 }
 
 void Player::Render()
@@ -58,4 +59,6 @@ void Player::AddChildObject(GameObject* obj)
     ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\Circle.png", &(childBit->m_pBitmap));
     childBit->SetRelativeScale(0.3f, 0.3f);
     childBit->SetRelativeLocation(D2D1::Vector2F(30, 10));  // 부모를 기준으로 한 상대 위치
+	childBit->UpdateTransform();  // 추가된 부분: 변환 정보 업데이트
+
 }

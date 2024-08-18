@@ -24,7 +24,7 @@ void Movement::Update()
 	m_Velocity = m_Direction * m_Speed;
 
 	// 새로운 위치를 계산한다.
-	Location += m_Velocity * TimeManager::GetInstance()->GetDeltaTime();
+	Location += m_Velocity * TimeManager::Get()->GetDeltaTime();
 
 	//새로 계산된 위치를 적용한다.
 	rootScene->SetRelativeLocation(Location);

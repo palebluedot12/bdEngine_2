@@ -6,7 +6,7 @@ private:
 	TimeManager() = default;
 
 public:
-	static TimeManager* GetInstance()
+	static TimeManager* Get()
 	{
 		static TimeManager _instance;
 		return &_instance;

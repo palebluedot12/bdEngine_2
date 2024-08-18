@@ -79,8 +79,8 @@ void AnimationScene::Render()
 	if (m_pAnimationInfo == nullptr)
 		return;
 
-	D2D1_MATRIX_3X2_F Transform = m_RenderTransform * m_WorldTransform * D2DRenderer::m_CameraWorldInverse;
-	D2DRenderer::Get()->GetRenderTarget()->SetTransform(Transform);
+	//D2D1_MATRIX_3X2_F Transform = m_RenderTransform * m_WorldTransform * D2DRenderer::m_CameraWorldInverse;
+	//D2DRenderer::Get()->GetRenderTarget()->SetTransform(Transform);
 	D2DRenderer::Get()->GetRenderTarget()->DrawBitmap(m_pBitmap, m_DstRect, 1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, m_SrcRect);
 }
 

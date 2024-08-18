@@ -23,9 +23,6 @@ public:
 	virtual void SetDirection(const MathHelper::Vector2F& Direction);
 	const MathHelper::Vector2F& GetDirection() { return m_Direction; };
 
-private:
-	void HandleInput();
-	void Move(float deltaTime);
 
 };
 

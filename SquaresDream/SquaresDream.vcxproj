@@ -138,6 +138,9 @@
     <ClInclude Include="PlayerWalkState.h" />
     <ClInclude Include="PlayWorld_1.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SquareIdleState.h" />
+    <ClInclude Include="SquareMovement.h" />
+    <ClInclude Include="SquareRollingState.h" />
     <ClInclude Include="SquaresDream.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TitleWorld.h" />
@@ -149,6 +152,9 @@
     <ClCompile Include="PlayerIdleState.cpp" />
     <ClCompile Include="PlayerWalkState.cpp" />
     <ClCompile Include="PlayWorld_1.cpp" />
+    <ClCompile Include="SquareIdleState.cpp" />
+    <ClCompile Include="SquareMovement.cpp" />
+    <ClCompile Include="SquareRollingState.cpp" />
     <ClCompile Include="SquaresDream.cpp" />
     <ClCompile Include="TitleWorld.cpp" />
   </ItemGroup>
