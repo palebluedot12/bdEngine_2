@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CameraScene.h"
 #include "GameObject.h"
+#include "World.h"
 
 CameraScene::CameraScene()
 {
@@ -35,10 +36,20 @@ void CameraScene::Update()
 
 	Scene::UpdateTransform();
 
-	m_ViewBoundBox.m_Center = GetWorldLocation();
+	m_ViewBoundBox.m_Center = m_Target->GetWorldLocation();
 
-	//D2D1_VECTOR_2F cameraWorldPos = GetWorldLocation();
-	//wchar_t debugStr[256];
-	//swprintf_s(debugStr, L"Camera::Update - New Location: (%f, %f)\n", cameraWorldPos.x, cameraWorldPos.y);
-	//OutputDebugString(debugStr);
+	 // GameObject의 Owner(World)를 통해 월드의 컬링 범위 갱신
+	if (GetOwner())
+	{
+		World* world = GetOwner()->GetOwner();  // GameObject에서 World를 가져옴
+		if (world)
+		{
+			world->UpdateCullingBound();
+		}
+	}
+
+	D2D1_VECTOR_2F cameraWorldPos = GetWorldLocation();
+	wchar_t debugStr[256];
+	swprintf_s(debugStr, L"Camera::BoundBOx - New Location: (%f, %f)\n", m_ViewBoundBox.m_Center.x, m_ViewBoundBox.m_Center.y);
+	OutputDebugString(debugStr);
 }

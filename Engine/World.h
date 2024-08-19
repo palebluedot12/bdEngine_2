@@ -13,11 +13,20 @@ public:
 	virtual ~World();
 
 	std::list<GameObject*> m_GameObjects;
+	std::list<GameObject*> m_VisibleObjects;       // 컬링 결과
+
+	const std::list<GameObject*>& GetGameObjects() const { return m_GameObjects; }
+	const std::list<GameObject*>& GetVisibleObjects() const { return m_VisibleObjects; }
+
+
 	AABB* m_pCullingBound = nullptr;
 	AABB m_CullingBoundDefault;
 
 	void SetActiveCamera(CameraScene* camera) { m_ActiveCamera = camera; }
 	CameraScene* GetActiveCamera() const { return m_ActiveCamera; }
+
+	void UpdateCullingBound();                     // 컬링 범위 갱신
+	void PerformCulling();                         // 컬링 실행 (VisibleObjects 갱신)
 
 public:
 	void Init();
@@ -35,6 +44,7 @@ public:
 	//void Render(ID2D1RenderTarget* pRenderTarget);
 	//void Clear();
 	void SetCullingBound(AABB* pBound) { m_pCullingBound = pBound; }
+
 	// 템플릿 함수로 GameObject를 생성한다.
 	template<typename T>
 	T* CreateGameObject()

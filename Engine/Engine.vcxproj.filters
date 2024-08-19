@@ -104,17 +104,8 @@
     <ClInclude Include="CameraScene.h">
       <Filter>03. Component\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Collider.h">
+    <ClInclude Include="OBB.h">
       <Filter>05. Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="CircleCollider2D.h">
-      <Filter>05. Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="BoxCollider2D.h">
-      <Filter>05. Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionManager.h">
-      <Filter>02. Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -181,17 +172,8 @@
     <ClCompile Include="CameraScene.cpp">
       <Filter>03. Component\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Collider.cpp">
+    <ClCompile Include="OBB.cpp">
       <Filter>05. Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="CircleCollider2D.cpp">
-      <Filter>05. Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="BoxCollider2D.cpp">
-      <Filter>05. Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>02. Manager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

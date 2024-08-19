@@ -147,11 +147,7 @@
     <ClInclude Include="AnimationAsset.h" />
     <ClInclude Include="AnimationScene.h" />
     <ClInclude Include="BitmapScene.h" />
-    <ClInclude Include="BoxCollider2D.h" />
     <ClInclude Include="CameraScene.h" />
-    <ClInclude Include="CircleCollider2D.h" />
-    <ClInclude Include="Collider.h" />
-    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CommonEnums.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="D2DRenderer.h" />
@@ -163,6 +159,7 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="OBB.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReferenceCounter.h" />
     <ClInclude Include="RenderScene.h" />
@@ -178,11 +175,7 @@
     <ClCompile Include="AnimationAsset.cpp" />
     <ClCompile Include="AnimationScene.cpp" />
     <ClCompile Include="BitmapScene.cpp" />
-    <ClCompile Include="BoxCollider2D.cpp" />
     <ClCompile Include="CameraScene.cpp" />
-    <ClCompile Include="CircleCollider2D.cpp" />
-    <ClCompile Include="Collider.cpp" />
-    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="D2DRenderer.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -193,6 +186,7 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="OBB.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
