@@ -17,7 +17,8 @@ void PlayWorld_1::WorldEnter()
 	// 오브젝트 만들기. (컴포넌트는 각 오브젝트 클래스의 생성자에서 붙임)
 	{
 		Player* p = CreateGameObject<Player>();
-		p->m_pRootScene->SetRelativeLocation(640.0f, 360.0f);
+	//	p->m_pRootScene->SetRelativeLocation(640.0f, 360.0f);
+		//p->SetBoundBox(30.0f, 30.0f);
 
 		// 플레이어에 카메라 붙이기
 		GameObject* cameraObj = CreateGameObject<GameObject>();
@@ -35,6 +36,7 @@ void PlayWorld_1::WorldEnter()
 		GameObject* test = CreateGameObject<GameObject>();
 		BitmapScene* bit = test->CreateComponent<BitmapScene>();
 		test->SetRootScene(bit);
+		test->SetBoundBox(30, 30);
 		ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
 	}
 }

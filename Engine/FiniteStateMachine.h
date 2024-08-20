@@ -27,8 +27,8 @@ public:
 			m_NowState = new T;
 			m_NowState->SetOwner(m_Owner);
 			m_NowState->SetFSM(this);
+			m_NowState->Enter();
 		}
-		m_NowState->Enter();
 	}
 
 private:

@@ -71,5 +71,6 @@ enum class Color
 {
 	RED = D2D1::ColorF::Red,
 	BLACK = D2D1::ColorF::Black,
-	WHITE = D2D1::ColorF::White
+	WHITE = D2D1::ColorF::White,
+	GREEN = D2D1::ColorF::Green,
 };

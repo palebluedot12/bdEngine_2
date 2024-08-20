@@ -1,5 +1,6 @@
 #pragma once
 #include <d2d1.h>
+#include "AABB.h"
 
 class D2DRenderer
 {
@@ -32,6 +33,7 @@ public:
 	void DrawLine(Vector2D from, Vector2D to, float width, Color color);
 	void FillRectangle(Vector2D pos, Vector2D size, Color color);
 	void DrawRectangle(Vector2D pos, Vector2D size, Color color);
+	void DrawDebugRectangle(const AABB& aabb, Color color);
 
 	//Bitmap
 	void DrawBitmap(ID2D1Bitmap* bitmap, Vector2D pos, float sizeRate);
@@ -40,6 +42,7 @@ public:
 
 	D2D1_SIZE_F GetRenderSize() { return pRenderTarget->GetSize(); }
 	size_t GetUsedVRAM();
+	unordered_map<Color, ID2D1SolidColorBrush*> GetBrushes() { return pBrushes; }
 private:
 	BOOL InitForText();
 

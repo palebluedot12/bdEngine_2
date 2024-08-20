@@ -73,12 +73,19 @@ void BitmapScene::Render()
 	D2D1::Matrix3x2F translationToCenter = D2D1::Matrix3x2F::Translation(-bitmapSize.width / 2, -bitmapSize.height / 2);
 	//D2D1::Matrix3x2F translationBack = D2D1::Matrix3x2F::Translation(bitmapSize.width / 2, bitmapSize.height / 2);
 
-
 	// 최종 변환 행렬 계산 (센터 변환 * 월드 변환 * 카메라 변환) => 순서 !!! 중요
 	D2D1_MATRIX_3X2_F finalTransform = translationToCenter * m_WorldTransform * cameraTransform;
 
 	D2DRenderer::Get()->GetRenderTarget()->SetTransform(finalTransform);
 	D2DRenderer::Get()->GetRenderTarget()->DrawBitmap(m_pBitmap);
+	D2DRenderer::Get()->DrawDebugRectangle(GetOwner()->m_BoundBox, Color::GREEN);
+
+	wchar_t debugStr[256];
+
+	swprintf_s(debugStr, L"BoundBOx -Location: (%f, %f)\n World - Location: (% f, % f)\n",
+		GetOwner()->m_BoundBox.m_Center.x, GetOwner()->m_BoundBox.m_Center.y,
+		GetWorldLocation().x, GetWorldLocation().y);
+	OutputDebugString(debugStr);
 	D2DRenderer::Get()->GetRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 }
 

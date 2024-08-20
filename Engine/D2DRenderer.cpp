@@ -112,6 +112,9 @@ void D2DRenderer::CreateBrushes()
 
 	pBrushes[Color::RED] = nullptr;
 	pRenderTarget->CreateSolidColorBrush(D2D1::ColorF((int)Color::RED), &pBrushes[Color::RED]);
+
+	pBrushes[Color::GREEN] = nullptr;
+	pRenderTarget->CreateSolidColorBrush(D2D1::ColorF((int)Color::GREEN), &pBrushes[Color::GREEN]);
 }
 
 
@@ -170,6 +173,20 @@ void D2DRenderer::DrawRectangle(Vector2D pos, Vector2D size, Color color)
 	pRenderTarget->DrawRectangle(
 		D2D1::RectF(pos.x - size.x / 2, pos.y - size.y / 2,
 			pos.x + size.x / 2, pos.y + size.y / 2), pBrushes[color]);
+}
+
+void D2DRenderer::DrawDebugRectangle(const AABB& aabb, Color color)
+{
+	float x = aabb.GetMaxX() - aabb.GetMinX();
+	float y = aabb.GetMaxY() - aabb.GetMinY();
+	
+	D2D1_RECT_F rect = D2D1::RectF(
+		0, 0,
+		x, y);
+
+	pRenderTarget->DrawRectangle(rect, pBrushes[color]);
+	//pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
+
 }
 
 void D2DRenderer::DrawBitmap(ID2D1Bitmap* bitmap, Vector2D pos, float sizeRate)

@@ -2,6 +2,9 @@
 #include "GameObject.h"
 #include "Component.h"
 #include "Scene.h"
+#include "D2DRenderer.h"
+#include "CameraScene.h"
+#include "World.h"
 
 GameObject::GameObject()
 {
@@ -25,6 +28,10 @@ void GameObject::Update()
 
 	if (m_pRootScene)
 		m_BoundBox.m_Center = m_pRootScene->GetWorldLocation();
+
+	//wchar_t debugStr[256];
+	//swprintf_s(debugStr, L"BoundBOx ??? (%f, %f)\n", m_BoundBox.m_Center.x, m_BoundBox.m_Center.y);
+	//OutputDebugString(debugStr);
 }
 
 void GameObject::Render()
@@ -33,6 +40,7 @@ void GameObject::Render()
 	{
 		pComponent->Render();
 	}
+
 }
 
 void GameObject::AddComponent(Component* pComponent)

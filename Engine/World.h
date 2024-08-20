@@ -60,6 +60,9 @@ public:
 	std::string		GetName() const { return m_Worldname; }
 	eWorldTag		GetTag() const { return m_WorldTag; }
 	void			SetName(std::string _name) { m_Worldname = _name; }
+	bool			m_DebugDraw = true;
+
+
 private:
 	std::string		m_Worldname;
 	eWorldTag		m_WorldTag;

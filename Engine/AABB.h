@@ -35,14 +35,15 @@ public:
 
 	void SetCenter(float x, float y) { m_Center = { x, y }; }
 	void SetExtent(float x, float y) { m_Extent = { x, y }; }
-	float GetMinX() { return m_Center.x - m_Extent.x; }
-	float GetMaxX() { return m_Center.x + m_Extent.x; }
-	float GetMinY() { return m_Center.y - m_Extent.y; }
-	float GetMaxY() { return m_Center.y + m_Extent.y; }
+	float GetMinX() const { return m_Center.x - m_Extent.x; }
+	float GetMaxX() const { return m_Center.x + m_Extent.x; }
+	float GetMinY() const { return m_Center.y - m_Extent.y; }
+	float GetMaxY() const { return m_Center.y + m_Extent.y; }
 
 	bool CheckIntersect(const AABB& other) const
 	{
 		// self min,max
+
 		float BoxA_xmin = m_Center.x - m_Extent.x;
 		float BoxA_xmax = m_Center.x + m_Extent.x;
 		float BoxA_ymin = m_Center.y - m_Extent.y;

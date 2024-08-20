@@ -23,7 +23,9 @@ void WorldManager::LateUpdate()
 void WorldManager::Render()
 {
 	if (m_CurrentWorld)
+	{
 		m_CurrentWorld->Render();
+	}
 
 	// load할 월드가 있으면 이때 바꿈
 	if (m_LoadWorld)

@@ -22,7 +22,8 @@ public:
 	void SetBoundBox(float width, float height) { m_BoundBox.SetExtent(width / 2.0f, height / 2.0f); }
 	void AddComponent(Component* pComponent);
 	void SetOwner(World* pOwner) { m_pOwner = pOwner; }
-	World* GetOwner() { return m_pOwner; }
+	World* GetOwner() const { return m_pOwner; }
+	
 
 	D2D1_VECTOR_2F GetWorldLocation();
 

@@ -63,5 +63,4 @@ void World::Render()
 	{
 		obj->Render();
 	}
-
 }
