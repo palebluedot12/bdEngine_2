@@ -19,6 +19,11 @@ class AABB
 {
 public:
 	AABB() : m_Center{ 0 }, m_Extent{ 0 } { }
+
+private:
+	static UINT CollisionID;
+	UINT32 m_ID;
+
 public:
 	D2D1_VECTOR_2F m_Center; // 중앙
 	D2D1_VECTOR_2F m_Extent; // x,y축 확장값	
@@ -39,6 +44,8 @@ public:
 	float GetMaxX() const { return m_Center.x + m_Extent.x; }
 	float GetMinY() const { return m_Center.y - m_Extent.y; }
 	float GetMaxY() const { return m_Center.y + m_Extent.y; }
+	UINT32 GetID() const { return m_ID; }
+
 
 	bool CheckIntersect(const AABB& other) const
 	{

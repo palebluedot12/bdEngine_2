@@ -17,8 +17,6 @@ Player::Player()
 	Movement* move = CreateComponent<Movement>();
 	CreateComponent<FiniteStateMachine>();
 	
-	SetBoundBox(30, 30);
-
 	// ºñÆ®¸Ê ·Îµå
 	ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
 	bit->SetRelativeScale(2.0, 2.0);

@@ -34,7 +34,7 @@ void CollisionManager::Update()
 	for (auto iterA = visibleObjects.begin(); iterA != visibleObjects.end(); ++iterA)
 	{
 		GameObject* left = *iterA;
-		Collider* leftCol = left->GetComponent<Collider>();
+		const AABB& leftCol = left->GetBoundBox();
 
 		for (auto iterB = std::next(iterA); iterB != visibleObjects.end(); ++iterB)
 		{
@@ -59,12 +59,12 @@ void CollisionManager::Render(ID2D1RenderTarget* pRenderTarget)
 }
 
 
-void CollisionManager::ColliderCollision(Collider* left, Collider* right)
+void CollisionManager::ColliderCollision(const AABB& left, const AABB& right)
 {
 	// 두 충돌체 번호로 가져온 ID 확인하여 CollisionID 세팅
 	CollisionID id = {};
-	id.left = left->GetID();
-	id.right = right->GetID();
+	id.left = left.GetID();
+	id.right = right.GetID();
 
 	// 이전 충돌 정보를 검색한다.
 	// 만약에 충돌정보가 없는 상태라면 충돌정보를 생성해준다.
@@ -76,7 +76,7 @@ void CollisionManager::ColliderCollision(Collider* left, Collider* right)
 	}
 
 	// 충돌 체크를 해준다
-	if (Intersect(left, right))
+	if (left.CheckIntersect(right))
 	{
 		//이전에 충돌하지 않았는데 충돌했다? => 최초 충돌(Enter)
 		if (iter->second == false)
