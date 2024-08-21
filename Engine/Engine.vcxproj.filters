@@ -107,17 +107,14 @@
     <ClInclude Include="OBB.h">
       <Filter>05. Collider</Filter>
     </ClInclude>
-    <ClInclude Include="BoxCollider2D.h">
-      <Filter>05. Collider</Filter>
-    </ClInclude>
-    <ClInclude Include="CircleCollider2D.h">
-      <Filter>05. Collider</Filter>
-    </ClInclude>
     <ClInclude Include="Collider.h">
       <Filter>05. Collider</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
       <Filter>05. Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>03. Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -187,17 +184,14 @@
     <ClCompile Include="OBB.cpp">
       <Filter>05. Collider</Filter>
     </ClCompile>
-    <ClCompile Include="BoxCollider2D.cpp">
-      <Filter>05. Collider</Filter>
-    </ClCompile>
-    <ClCompile Include="CircleCollider2D.cpp">
-      <Filter>05. Collider</Filter>
-    </ClCompile>
     <ClCompile Include="Collider.cpp">
       <Filter>05. Collider</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>05. Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>03. Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -82,10 +82,10 @@ void BitmapScene::Render()
 
 	wchar_t debugStr[256];
 
-	swprintf_s(debugStr, L"BoundBOx -Location: (%f, %f)\n World - Location: (% f, % f)\n",
-		GetOwner()->m_BoundBox.m_Center.x, GetOwner()->m_BoundBox.m_Center.y,
-		GetWorldLocation().x, GetWorldLocation().y);
-	OutputDebugString(debugStr);
+	//swprintf_s(debugStr, L"BoundBOx -Location: (%f, %f)\n World - Location: (% f, % f)\n",
+	//	GetOwner()->m_BoundBox.m_Center.x, GetOwner()->m_BoundBox.m_Center.y,
+	//	GetWorldLocation().x, GetWorldLocation().y);
+	//OutputDebugString(debugStr);
 	D2DRenderer::Get()->GetRenderTarget()->SetTransform(D2D1::Matrix3x2F::Identity());
 }
 

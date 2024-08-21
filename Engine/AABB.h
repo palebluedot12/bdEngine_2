@@ -1,4 +1,5 @@
 #pragma once
+#include "Collider.h"
 
 /*
 	AABB (Axis-Aligned Bounding Box) 축 정렬된 경계 상자
@@ -15,7 +16,9 @@
 	--+------------------------------------> +x
    0,0
 */
-class AABB
+
+
+class AABB : public Collider
 {
 public:
 	AABB() : m_Center{ 0 }, m_Extent{ 0 } { }
@@ -40,6 +43,7 @@ public:
 
 	void SetCenter(float x, float y) { m_Center = { x, y }; }
 	void SetExtent(float x, float y) { m_Extent = { x, y }; }
+
 	float GetMinX() const { return m_Center.x - m_Extent.x; }
 	float GetMaxX() const { return m_Center.x + m_Extent.x; }
 	float GetMinY() const { return m_Center.y - m_Extent.y; }
@@ -47,8 +51,11 @@ public:
 	UINT32 GetID() const { return m_ID; }
 
 
-	bool CheckIntersect(const AABB& other) const
+	virtual bool CheckIntersect(const Collider& other) const override
 	{
+		const AABB* otherAABB = dynamic_cast<const AABB*>(&other);
+		if (!otherAABB) return false;  // 다른 콜라이더 타입은 아직 지원하지 않음
+
 		// self min,max
 
 		float BoxA_xmin = m_Center.x - m_Extent.x;
@@ -57,10 +64,10 @@ public:
 		float BoxA_ymax = m_Center.y + m_Extent.y;
 
 		// other min,max
-		float BoxB_xmin = other.m_Center.x - other.m_Extent.x;
-		float BoxB_xmax = other.m_Center.x + other.m_Extent.x;
-		float BoxB_ymin = other.m_Center.y - other.m_Extent.y;
-		float BoxB_ymax = other.m_Center.y + other.m_Extent.y;
+		float BoxB_xmin = otherAABB->GetMinX();
+		float BoxB_xmax = otherAABB->GetMaxX();
+		float BoxB_ymin = otherAABB->GetMinY();
+		float BoxB_ymax = otherAABB->GetMaxY();
 
 		// Check for no overlap conditions
 		if (BoxA_xmax < BoxB_xmin ||  // 오른쪽에 있으면 겹칠수가 없음

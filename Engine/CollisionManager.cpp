@@ -1,4 +1,5 @@
-﻿#include "CollisionManager.h"
+﻿#include "pch.h"
+#include "CollisionManager.h"
 #include "World.h"
 #include "WorldManager.h"
 #include "GameObject.h"
@@ -34,15 +35,19 @@ void CollisionManager::Update()
 	for (auto iterA = visibleObjects.begin(); iterA != visibleObjects.end(); ++iterA)
 	{
 		GameObject* left = *iterA;
-		const AABB& leftCol = left->GetBoundBox();
+		if (left->IsCamera()) continue;
+
+		Collider* leftCol = &left->GetBoundBox();
 
 		for (auto iterB = std::next(iterA); iterB != visibleObjects.end(); ++iterB)
 		{
 			GameObject* right = *iterB;
-			Collider* rightCol = right->GetComponent<Collider>();
+			if (right->IsCamera()) continue;  // 카메라 객체 스킵
+
 
 			if (left != right)
 			{
+				Collider* rightCol = &right->GetBoundBox();
 				ColliderCollision(leftCol, rightCol);
 			}
 		}
@@ -59,12 +64,10 @@ void CollisionManager::Render(ID2D1RenderTarget* pRenderTarget)
 }
 
 
-void CollisionManager::ColliderCollision(const AABB& left, const AABB& right)
+void CollisionManager::ColliderCollision(Collider* left, Collider* right)
 {
 	// 두 충돌체 번호로 가져온 ID 확인하여 CollisionID 세팅
-	CollisionID id = {};
-	id.left = left.GetID();
-	id.right = right.GetID();
+	CollisionID id = { left->GetID(), right->GetID() };
 
 	// 이전 충돌 정보를 검색한다.
 	// 만약에 충돌정보가 없는 상태라면 충돌정보를 생성해준다.
@@ -76,7 +79,7 @@ void CollisionManager::ColliderCollision(const AABB& left, const AABB& right)
 	}
 
 	// 충돌 체크를 해준다
-	if (left.CheckIntersect(right))
+	if (left->CheckIntersect(*right))
 	{
 		//이전에 충돌하지 않았는데 충돌했다? => 최초 충돌(Enter)
 		if (iter->second == false)

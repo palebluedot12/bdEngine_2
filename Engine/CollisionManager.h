@@ -1,7 +1,6 @@
 #pragma once
 #include "pch.h"
-#include "BoxCollider2D.h"
-#include "CircleCollider2D.h"
+#include "Collider.h"
 
 union CollisionID
 {
@@ -22,7 +21,7 @@ public:
 	static void LateUpdate();
 	static void Render(ID2D1RenderTarget* pRenderTarget);
 
-	static void ColliderCollision(const AABB& left, const AABB& right);
+	static void ColliderCollision(Collider* left, Collider* right);
 
 private:
 	// 유니티처럼 충돌 레이어 만듦. 충돌 감지할 오브젝트들끼리만 체크

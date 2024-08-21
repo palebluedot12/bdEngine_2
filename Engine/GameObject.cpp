@@ -8,6 +8,8 @@
 
 GameObject::GameObject()
 {
+	m_OwnedComponents.resize((UINT)eComponentType::End);
+	CreateComponent<Scene>();
 }
 
 GameObject::~GameObject()
@@ -23,6 +25,8 @@ void GameObject::Update()
 {
 	for (auto& pComponent : m_OwnedComponents)
 	{
+		if (pComponent == nullptr)
+			continue;
 		pComponent->Update();
 	}
 
@@ -38,6 +42,8 @@ void GameObject::Render()
 {
 	for (auto& pComponent : m_OwnedComponents)
 	{
+		if (pComponent == nullptr)
+			continue;
 		pComponent->Render();
 	}
 

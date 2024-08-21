@@ -16,3 +16,15 @@ enum class eDirType
 	DOWN,
 	LEFT,
 };
+
+// 업데이트 순서
+enum class eComponentType
+{
+	Scene,
+	Movement,
+	Collider,
+	Script,
+	Animator,
+	Camera,
+	End,
+};

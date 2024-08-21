@@ -10,6 +10,11 @@ CameraScene::CameraScene()
 
 	m_ViewBoundBox.SetExtent(width / 2, height / 2);
 
+	if (GetOwner())
+	{
+		GetOwner()->SetAsCamera();
+	}
+
 }
 
 CameraScene::~CameraScene()
@@ -49,7 +54,7 @@ void CameraScene::Update()
 	}
 
 	D2D1_VECTOR_2F cameraWorldPos = GetWorldLocation();
-	wchar_t debugStr[256];
-	swprintf_s(debugStr, L"Camera::BoundBOx - New Location: (%f, %f)\n", m_ViewBoundBox.m_Center.x, m_ViewBoundBox.m_Center.y);
-	OutputDebugString(debugStr);
+	//wchar_t debugStr[256];
+	//swprintf_s(debugStr, L"Camera::BoundBOx - New Location: (%f, %f)\n", m_ViewBoundBox.m_Center.x, m_ViewBoundBox.m_Center.y);
+	//OutputDebugString(debugStr);
 }

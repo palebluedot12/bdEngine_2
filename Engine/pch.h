@@ -23,6 +23,7 @@
 #include <sstream>
 #include <iostream>
 #include "MathHelper.h"
+#include <wincodec.h>
 
 using namespace std;
 using namespace MathHelper;

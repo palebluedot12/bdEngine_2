@@ -5,6 +5,7 @@
 #include "WorldManager.h"
 #include "InputManager.h"
 #include "ResourceManager.h"
+#include "CollisionManager.h"
 
 GameApp::GameApp()
 {
@@ -174,9 +175,10 @@ void GameApp::FixedUpdate()
 
 void GameApp::Update()
 {
-	//TimeManager::GetInstance()->Update();
+	//TimeManager::Get()->Update();
 	WorldManager::Update();
-	//InputManager::GetInstance()->Update();
+	//Input::Update();
+	CollisionManager::Update();
 }
 
 void GameApp::LateUpdate()

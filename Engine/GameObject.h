@@ -4,6 +4,7 @@
 class Component;
 class Scene;
 class World;
+
 class GameObject
 {
 public:
@@ -18,11 +19,15 @@ public:
 	void Update();
 	void Render();
 	void SetRootScene(Scene* pRootComponent) { m_pRootScene = pRootComponent; }
-	const AABB& GetBoundBox() const { return m_BoundBox; }
+	AABB& GetBoundBox()  { return m_BoundBox; }
 	void SetBoundBox(float width, float height) { m_BoundBox.SetExtent(width / 2.0f, height / 2.0f); }
 	void AddComponent(Component* pComponent);
 	void SetOwner(World* pOwner) { m_pOwner = pOwner; }
 	World* GetOwner() const { return m_pOwner; }
+
+	bool isCamera = false;
+	void SetAsCamera(bool value = true) { isCamera = value; }
+	bool IsCamera() const { return isCamera; }
 	
 
 	D2D1_VECTOR_2F GetWorldLocation();
@@ -38,14 +43,20 @@ public:
 	}
 
 	template<class T>
-	T* GetComponent()
-	{
-		for (auto component : m_OwnedComponents)
-		{
-			if (dynamic_cast<T*>(component) != nullptr)
-				return dynamic_cast<T*>(component);
+	T* GetComponent() {
+		if (m_OwnedComponents.empty()) {
+			return nullptr;
 		}
+
+		for (Component* comp : m_OwnedComponents) {
+			T* castedComponent = dynamic_cast<T*>(comp);
+			if (castedComponent) {
+				return castedComponent;
+			}
+		}
+		return nullptr;
 	}
+
 
 };
 
