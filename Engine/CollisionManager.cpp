@@ -16,17 +16,6 @@ void CollisionManager::Initialize()
 void CollisionManager::Update()
 {
 
-	//for (UINT row = 0; row < (UINT)eLayerType::Max; row++)
-	//{
-	//	for (UINT col = 0; col < (UINT)eLayerType::Max; col++)
-	//	{
-	//		if (m_CollisionLayerMatrix[row][col] == true)
-	//		{
-	//			LayerCollision(scene, (eLayerType)row, (eLayerType)col);
-	//		}
-	//	}
-	//}
-
 	World* world = WorldManager::GetCurrentWorld();
 
 	const std::list<GameObject*>& visibleObjects = world->GetVisibleObjects();
@@ -42,8 +31,7 @@ void CollisionManager::Update()
 		for (auto iterB = std::next(iterA); iterB != visibleObjects.end(); ++iterB)
 		{
 			GameObject* right = *iterB;
-			if (right->IsCamera()) continue;  // 카메라 객체 스킵
-
+			if (right->IsCamera()) continue;  // 카메라는 스킵!
 
 			if (left != right)
 			{

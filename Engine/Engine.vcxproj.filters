@@ -116,6 +116,9 @@
     <ClInclude Include="Script.h">
       <Filter>03. Component</Filter>
     </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>03. Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
@@ -191,6 +194,9 @@
       <Filter>05. Collider</Filter>
     </ClCompile>
     <ClCompile Include="Script.cpp">
+      <Filter>03. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
       <Filter>03. Component</Filter>
     </ClCompile>
   </ItemGroup>

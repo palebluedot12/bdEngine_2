@@ -167,6 +167,7 @@
     <ClInclude Include="RenderScene.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Script.h" />
     <ClInclude Include="TimeManager.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="ReferenceCounter.cpp" />
     <ClCompile Include="RenderScene.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="TimeManager.cpp" />

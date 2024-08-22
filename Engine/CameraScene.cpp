@@ -32,7 +32,7 @@ void CameraScene::Update()
 		// 화면의 중심점(화면 크기의 절반)
 		MathHelper::Vector2F screenCenter(1280.0f / 2.0f, 720.0f / 2.0f);
 
-		// targetPos를 Vector2F 객체로 변환
+		// targetPos를 Vector2F로 변환
 		MathHelper::Vector2F targetVector(targetPos);
 
 		// 카메라의 위치를 오브젝트가 화면 중앙에 위치하도록 조정
@@ -46,7 +46,7 @@ void CameraScene::Update()
 	 // GameObject의 Owner(World)를 통해 월드의 컬링 범위 갱신
 	if (GetOwner())
 	{
-		World* world = GetOwner()->GetOwner();  // GameObject에서 World를 가져옴
+		World* world = GetOwner()->GetOwner();
 		if (world)
 		{
 			world->UpdateCullingBound();
