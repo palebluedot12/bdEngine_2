@@ -185,7 +185,7 @@ void D2DRenderer::DrawDebugRectangle(const AABB& aabb, Color color)
 		x, y);
 
 	pRenderTarget->DrawRectangle(rect, pBrushes[color]);
-	//pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
+	pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
 
 }
 

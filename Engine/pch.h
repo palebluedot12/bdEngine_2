@@ -30,9 +30,39 @@ using namespace MathHelper;
 
 class Vector2D
 {
+
 public:
+	Vector2D()
+		: x(0.0f)
+		, y(0.0f)
+	{
+
+	}
+
 	Vector2D(float x, float y) : x(x), y(y) {}
+
 	float x, y;
+
+	static const Vector2D Zero;
+	static const Vector2D One;
+
+	Vector2D& operator+=(const Vector2D& other)
+	{
+		x += other.x;
+		y += other.y;
+		return *this;
+	}
+
+	float length() const
+	{
+		return sqrt(x * x + y * y);
+	}
+
+	void clear()
+	{
+		x = 0.0f;
+		y = 0.0f;
+	}
 
 	Vector2D operator * (float f)
 	{
@@ -51,6 +81,30 @@ public:
 	{
 		return Vector2D{ x + other.x, y + other.y };
 	}
+
+	Vector2D operator / (float f) const
+	{
+		if (f == 0.0f)
+		{
+			return *this;
+		}
+		return Vector2D{ x / f, y / f };
+	}
+
+	Vector2D operator - ()
+	{
+		return Vector2D(-x, -y);
+	}
+
+	Vector2D operator / (const Vector2D& other) const
+	{
+		if (other.x == 0.0f || other.y == 0.0f)
+		{
+			return *this;
+		}
+		return Vector2D{ x / other.x, y / other.y };
+	}
+
 	bool operator ==(Vector2D other)
 	{
 		return (x == other.x && y == other.y);
@@ -66,7 +120,13 @@ public:
 			return Vector2D{ x, y };
 		return Vector2D({ x / length, y / length });
 	}
+
+
 };
+
+inline const Vector2D Vector2D::Zero = { 0.0f, 0.0f };
+inline const Vector2D Vector2D::One = { 1.0f, 1.0f };
+
 
 enum class Color
 {

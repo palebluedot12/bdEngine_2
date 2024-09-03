@@ -1,5 +1,6 @@
 #pragma once
 #include "AABB.h"
+#include "OBB.h"
 
 class Component;
 class Scene;
@@ -14,7 +15,7 @@ public:
 	std::vector<Component*> m_OwnedComponents;	// 소유한 컴포넌트들
 	Scene* m_pRootScene = nullptr;				// 컴포넌트 중에 어느게 루트인지 설정
 	World* m_pOwner = nullptr;					// 이 게임 오브젝트가 속한 월드
-	AABB m_BoundBox;	
+	AABB m_BoundBox;
 
 	void Update();
 	void Render();
@@ -29,7 +30,6 @@ public:
 	void SetAsCamera(bool value = true) { isCamera = value; }
 	bool IsCamera() const { return isCamera; }
 	
-
 	D2D1_VECTOR_2F GetWorldLocation();
 
 	template<typename T>

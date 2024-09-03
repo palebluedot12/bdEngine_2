@@ -36,6 +36,7 @@ void PlayWorld_1::WorldEnter()
 		BitmapScene* bit = test->CreateComponent<BitmapScene>();
 		test->SetRootScene(bit);
 		test->SetBoundBox(30, 30);
+		bit->SetRelativeLocation(300, 0);
 		ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
 	}
 }

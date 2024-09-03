@@ -3,6 +3,7 @@
 #include "PlayerWalkState.h"
 #include "SquareRollingState.h"
 #include "..\\Engine\\Movement.h"
+#include "..\\Engine\\RigidBody.h"
 #include "..\\Engine\\GameObject.h"
 #include "..\\Engine\\InputManager.h"
 #include "Player.h"
@@ -11,9 +12,10 @@
 
 void PlayerIdleState::Enter()
 {
-	Movement* movement = m_Owner->GetComponent<Movement>();
-	movement->SetSpeed(0.f);
+	//Movement* movement = m_Owner->GetComponent<Movement>();
+	//movement->SetSpeed(0.f);
 
+	RigidBody* rigidBody = m_Owner->GetComponent<RigidBody>();
 	m_Player = dynamic_cast<Player*>(m_Owner);
 }
 
@@ -28,7 +30,10 @@ void PlayerIdleState::Exit()
 
 void PlayerIdleState::MoveByInput()
 {
-	Movement* movement = m_Owner->GetComponent<Movement>();
+	//Movement* movement = m_Owner->GetComponent<Movement>();
+
+	RigidBody* rigidBody = m_Owner->GetComponent<RigidBody>();
+	Vector2D force = Vector2D::Zero;
 
 	if (Input::GetKey(eKeyCode::W))
 	{
@@ -55,4 +60,7 @@ void PlayerIdleState::MoveByInput()
 	{
 		WorldManager::ChangeWorld("Title");
 	}
+
+	rigidBody->AddForce(force * 100.0f); // Adjust force magnitude as needed
+
 }

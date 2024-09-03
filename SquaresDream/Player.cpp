@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "..\\Engine\\FiniteStateMachine.h"
 #include "..\\Engine\\Movement.h"
+#include "..\\Engine\\RigidBody.h"
 #include "..\\Engine\\BitmapScene.h"
 #include "..\\Engine\\ResourceManager.h"
 #include "PlayerIdleState.h"
@@ -13,8 +14,8 @@ Player::Player()
 	BitmapScene* bit = CreateComponent<BitmapScene>();
 	SetRootScene(bit);
 	
-
-	Movement* move = CreateComponent<Movement>();
+	//Movement* move = CreateComponent<Movement>();
+	RigidBody* rigidBody = CreateComponent<RigidBody>();
 	CreateComponent<FiniteStateMachine>();
 	
 	// ∫Ò∆Æ∏  ∑ŒµÂ

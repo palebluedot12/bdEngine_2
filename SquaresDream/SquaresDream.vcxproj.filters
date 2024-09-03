@@ -19,6 +19,9 @@
     <Filter Include="98. Headers">
       <UniqueIdentifier>{b3fed996-b2ea-4e7d-ac85-41b7bb6bca4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06. Scripts">
+      <UniqueIdentifier>{b9ba618a-a7e0-49ef-9c99-bf680a5134c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SquaresDream.h" />
@@ -58,6 +61,9 @@
     <ClInclude Include="SquareRollingState.h">
       <Filter>05. States</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerScript.h">
+      <Filter>06. Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="SquareRollingState.cpp">
       <Filter>05. States</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerScript.cpp">
+      <Filter>06. Scripts</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

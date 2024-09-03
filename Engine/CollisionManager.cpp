@@ -15,7 +15,6 @@ void CollisionManager::Initialize()
 
 void CollisionManager::Update()
 {
-
 	World* world = WorldManager::GetCurrentWorld();
 
 	const std::list<GameObject*>& visibleObjects = world->GetVisibleObjects();
@@ -40,7 +39,6 @@ void CollisionManager::Update()
 			}
 		}
 	}
-
 }
 
 void CollisionManager::LateUpdate()
@@ -50,7 +48,6 @@ void CollisionManager::LateUpdate()
 void CollisionManager::Render(ID2D1RenderTarget* pRenderTarget)
 {
 }
-
 
 void CollisionManager::ColliderCollision(Collider* left, Collider* right)
 {
@@ -83,7 +80,6 @@ void CollisionManager::ColliderCollision(Collider* left, Collider* right)
 			left->OnCollisionStay(right);
 			right->OnCollisionStay(left);
 		}
-
 	}
 	else
 	{

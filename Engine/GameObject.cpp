@@ -31,7 +31,10 @@ void GameObject::Update()
 	}
 
 	if (m_pRootScene)
+	{
 		m_BoundBox.m_Center = m_pRootScene->GetWorldLocation();
+		//m_BoundBox.m_Rotation = m_pRootScene->GetRotation();
+	}
 
 	//wchar_t debugStr[256];
 	//swprintf_s(debugStr, L"BoundBOx ??? (%f, %f)\n", m_BoundBox.m_Center.x, m_BoundBox.m_Center.y);
