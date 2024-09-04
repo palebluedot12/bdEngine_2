@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "RigidBody.h"
 #include "TimeManager.h"
 #include "GameObject.h"
@@ -11,6 +11,9 @@ RigidBody::RigidBody()
 	, m_Force(Vector2D::Zero)
 	, m_Velocity(Vector2D::Zero)
 	, m_Acceleration(Vector2D::Zero)
+    , m_Gravity(Vector2D(0.0f, 800.0f))
+    , m_IsGround(false)
+    , m_LimitedVelocity(Vector2D(200.0f, 1000.0f))
 {
 
 }
@@ -27,19 +30,59 @@ void RigidBody::Update()
 {
     float dt = TimeManager::Get()->GetDeltaTime();
 
-    // f(Èû) = m(Áú·®) x a(°¡¼Óµµ)
+    // f(í˜) = m(ì§ˆëŸ‰) x a(ê°€ì†ë„)
     m_Acceleration = m_Force / m_Mass;
 
     m_Velocity += m_Acceleration * dt;
 
-    if (!(m_Velocity == Vector2D::Zero))
+	// ë•…ìœ„ì— ìˆì„ë•Œ
+	if (m_IsGround)
+	{
+		Vector2D gravity = m_Gravity;
+		gravity.Normalize();
+
+		//
+
+		float dot = Vector2D::Dot(m_Velocity, gravity);
+		m_Velocity -= gravity * dot;
+	}
+	else
+	{
+		// ê³µì¤‘ì— ìˆì„Â‹Âš
+		m_Velocity += m_Gravity * dt;
+	}
+
+
+	//ìµœëŒ€ ì†ë„ ì œí•œ
+	Vector2D gravity = m_Gravity;
+	gravity.Normalize();
+	float dot = Vector2D::Dot(m_Velocity, gravity);
+	gravity = gravity * dot;
+
+	Vector2D sideVelocity = m_Velocity - gravity;
+	if (m_LimitedVelocity.y < gravity.length())
+	{
+		gravity.Normalize();
+		gravity *= m_LimitedVelocity.y;
+	}
+
+	if (m_LimitedVelocity.x < sideVelocity.length())
+	{
+		sideVelocity.Normalize();
+		sideVelocity *= m_LimitedVelocity.x;
+	}
+	m_Velocity = gravity + sideVelocity;
+
+
+
+    if (m_Velocity != Vector2D::Zero)
     {
-        // ¸¶Âû·Â => ¼ÓµµÀÇ ¹İ´ë¹æÇâ
+        // ë§ˆì°°ë ¥ => ì†ë„ì˜ ë°˜ëŒ€ë°©í–¥
         Vector2D friction = -m_Velocity;
         friction = friction.Normalize() * m_Friction * m_Mass * dt;
 
-        // ¸¶Âû·ÂÀ¸·Î ÀÎÇÑ ¼Óµµ °¨¼Ò·®ÀÌ ÇöÀç ¼Óµµº¸´Ù Å« °æ¿ì
-        if (m_Velocity.length() < friction.length())
+        // ë§ˆì°°ë ¥ìœ¼ë¡œ ì¸í•œ ì†ë„ ê°ì†ŒëŸ‰ì´ í˜„ì¬ ì†ë„ë³´ë‹¤ í° ê²½ìš°
+        if (m_Velocity.length() <= friction.length())
         {
             m_Velocity = Vector2D::Zero;
         }
@@ -49,7 +92,7 @@ void RigidBody::Update()
         }
     }
 
-    // À§Ä¡ ¾÷µ¥ÀÌÆ®
+    // ìœ„ì¹˜ ì—…ë°ì´íŠ¸
     GameObject* owner = GetOwner();
     if (owner && owner->m_pRootScene)
     {

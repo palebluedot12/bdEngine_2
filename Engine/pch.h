@@ -96,6 +96,20 @@ public:
 		return Vector2D(-x, -y);
 	}
 
+	Vector2D& operator-=(const Vector2D& other)
+	{
+		x -= other.x;
+		y -= other.y;
+		return *this;
+	}
+
+	Vector2D& operator*=(float f)
+	{
+		x *= f;
+		y *= f;
+		return *this;
+	}
+
 	Vector2D operator / (const Vector2D& other) const
 	{
 		if (other.x == 0.0f || other.y == 0.0f)
@@ -115,10 +129,16 @@ public:
 	}
 	Vector2D Normalize()
 	{
-		float length = sqrt(pow(x, 2) + pow(y, 2));
-		if (length == 0.f)
-			return Vector2D{ x, y };
-		return Vector2D({ x / length, y / length });
+		float len = length();
+		x /= len;
+		y /= len;
+
+		return *this;
+	}
+
+	static float Dot(const Vector2D& a, const Vector2D& b)
+	{
+		return a.x * b.x + a.y * b.y;
 	}
 
 
