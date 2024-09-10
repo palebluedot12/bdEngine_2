@@ -41,14 +41,13 @@ void RigidBody::Update()
 		Vector2D gravity = m_Gravity;
 		gravity.Normalize();
 
-		//
-
+		// 중력 방향 성분이 제거된 새로운 속도 구하기.
 		float dot = Vector2D::Dot(m_Velocity, gravity);
 		m_Velocity -= gravity * dot;
 	}
 	else
 	{
-		// 공중에 있을
+		// 공중에 있을 때
 		m_Velocity += m_Gravity * dt;
 	}
 

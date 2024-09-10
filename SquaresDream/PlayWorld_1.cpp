@@ -39,6 +39,15 @@ void PlayWorld_1::WorldEnter()
 		bit->SetRelativeLocation(300, 0);
 		ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
 	}
+
+	{
+		GameObject* floor = CreateGameObject<GameObject>();
+		BitmapScene* bit = floor->CreateComponent<BitmapScene>();
+		floor->SetRootScene(bit);
+		floor->SetBoundBox(1000, 30);
+		bit->SetRelativeLocation(-300, 500);
+		ResourceManager::Get()->CreateD2DBitmapFromFile(L"..\\Asset\\square.png", &(bit->m_pBitmap));
+	}
 }
 
 void PlayWorld_1::WorldExit()
