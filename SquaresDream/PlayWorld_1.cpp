@@ -3,6 +3,7 @@
 #include "..\\Engine\\FiniteStateMachine.h"
 #include "PlayerIdleState.h"
 #include "PlayerWalkState.h"
+#include "FloorScript.h"
 
 void PlayWorld_1::WorldLoad()
 {
@@ -43,6 +44,7 @@ void PlayWorld_1::WorldEnter()
 	{
 		GameObject* floor = CreateGameObject<GameObject>();
 		BitmapScene* bit = floor->CreateComponent<BitmapScene>();
+		floor->CreateComponent<FloorScript>();
 		floor->SetRootScene(bit);
 		floor->SetBoundBox(1000, 30);
 		bit->SetRelativeLocation(-300, 500);

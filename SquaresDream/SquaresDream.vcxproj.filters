@@ -64,6 +64,9 @@
     <ClInclude Include="PlayerScript.h">
       <Filter>06. Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="FloorScript.h">
+      <Filter>06. Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -96,6 +99,9 @@
       <Filter>05. States</Filter>
     </ClCompile>
     <ClCompile Include="PlayerScript.cpp">
+      <Filter>06. Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="FloorScript.cpp">
       <Filter>06. Scripts</Filter>
     </ClCompile>
   </ItemGroup>
